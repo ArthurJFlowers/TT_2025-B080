@@ -1,0 +1,7 @@
+El déficit fiscal de México lo publica la SHCP
+Requerimientos Financieros del Sector Público (RFSP) – déficit amplio oficial
+El déficit: viene como Requerimientos Financieros del Sector Público (RFSP), que es la medida oficial del déficit amplio publicada por la SHCP.
+Fuente de la metodología e información: https://www.secciones.hacienda.gob.mx/work/models/estadisticas_oportunas/metodologias/1bfm.pdf
+Fuente de datos: http://presto.hacienda.gob.mx/EstoporLayout/baseDatos.jsp
+
+
