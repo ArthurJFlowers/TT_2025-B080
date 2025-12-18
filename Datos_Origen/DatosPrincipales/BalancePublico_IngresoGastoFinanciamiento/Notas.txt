@@ -1,5 +1,7 @@
 Estos datos representan el "Balance público (Ingresos, Gasto y Financiamiento)"
 
-Ambos conjuntos de datos tienen una periodicidad mensual. 
+Ambos conjuntos de datos tienen una periodicidad mensual. Y dado que son muy grandesm github no me permite subirlos, por lo tanto comparto la fuente para que puedan
+disponer de ellos.
+
 
 Fuente: http://presto.hacienda.gob.mx/EstoporLayout/baseDatos.jsp
