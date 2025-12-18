@@ -1,0 +1,4 @@
+Estos datos representan la "Deuda"
+Ambos conjuntos de datos tienen una periodicidad mensual. 
+
+Fuente: http://presto.hacienda.gob.mx/EstoporLayout/baseDatos.jsp
