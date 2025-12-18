@@ -1,0 +1,13 @@
+﻿Variable,Institución,Validez,Repositorio de los datos
+"Deuda pública (Actual e histórica total, interna, externa)",SHCP,Primaria,http://presto.hacienda.gob.mx/EstoporLayout/baseDatos.jsp
+"Balance público (Ingresos, Gasto y Financiamiento) Actual e Histórico.",SHCP,Primaria,http://presto.hacienda.gob.mx/EstoporLayout/baseDatos.jsp
+DeficitFiscal ó Requerimientos Financieros del Sector Público (RFSP) Actual e Histórico.,SHCP,Primaria,http://presto.hacienda.gob.mx/EstoporLayout/baseDatos.jsp
+"PIB nominal trimestral (valores corrientes) y PIB real, volumen (índice encadenado, base 2018)",INEGI,Primaria,https://www.inegi.org.mx/temas/pib/#tabulados
+"INPC, Inflación general (variación anual)",INEGI,Primaria,https://www.inegi.org.mx/programas/inpc/2018a/#tabulados
+Tipo de cambio (USD/MXN) – FIX (DOF),Banxico,Primaria,https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?accion=consultarCuadro&idCuadro=CF86&locale=es&sector=6
+Balanza de pagos (cuenta corriente y componentes),Banxico,Primaria,https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?sector=1&accion=consultarCuadroAnalitico&idCuadro=CA410&locale=es
+Tasa de interés de referencia (Tasa objetivo),Banxico,Primaria,https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?sector=18&accion=consultarCuadroAnalitico&idCuadro=CA51&locale=es
+"Tasa de fondos federales (Fed funds, mensual)",Reserva Federal (Fed),Primaria (internacional),https://fred.stlouisfed.org/series/FEDFUNDS
+Deflactor,Reserva Federal (Fed),Primaria (internacional),https://fred.stlouisfed.org/series/CPIAUCSL
+"PIB (alternativo internacional, US$ corrientes)",Banco Mundial (WDI),Secundaria,https://datos.bancomundial.org/indicador/NY.GDP.MKTP.CD?locations=MX
+"Deuda externa total (alternativa internacional, US$)",Banco Mundial (IDS),Secundaria,https://datos.bancomundial.org/indicador/DT.DOD.DECT.CD?locations=MX
