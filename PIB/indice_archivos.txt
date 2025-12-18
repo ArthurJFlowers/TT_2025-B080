@@ -1,7 +1,0 @@
-﻿Índice de nombres y contenido de archivos 
- 
-PIBT_r_2.xlsx|Valores constantes a precios de 2018|Millones de pesos a precios de 2018
-PIBT_r_3.xlsx|Valores constantes a precios de 2018|Variación porcentual anual
-PIBT_2.xlsx|Series Originales|Millones de pesos anualizados, a precios de 2018
-PIBT_3.xlsx|Series Originales|Millones de pesos anualizados
-PIBT_4.xlsx|Series Originales|Índices 2018 = 100
