@@ -1,0 +1,11 @@
+CPI de EE. UU. (CPIAUCSL) — Consumer Price Index for All Urban Consumers
+
+ID: CPIAUCSL (mensual, BLS).
+
+Cuándo usarlo: para deflactar montos en USD cuando quieres poder de compra al consumidor (muy usado, amplia historia).
+
+Pros: popular y estable para comparaciones internacionales; alta frecuencia.
+
+Contras: canasta de consumo, no toda la economía
+
+Fuente: https://fred.stlouisfed.org/series/CPIAUCSL
