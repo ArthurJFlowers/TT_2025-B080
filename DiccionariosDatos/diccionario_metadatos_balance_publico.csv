@@ -1,0 +1,77 @@
+﻿Categoria,Subcategoria,Campo,Valor,Descripcion
+Informacion_General,,titulo,"Balance Público de México - Ingresos, Gastos y Financiamiento (Trimestral)",
+Informacion_General,,identificador,mexico_balance_publico_Trimestral_SHCP_Limpio,
+Informacion_General,,fuente,Secretaría de Hacienda y Crédito Público (SHCP),
+Informacion_General,,pais,México,
+Informacion_General,,cobertura_sectorial,"Sector Público Federal (Gobierno Federal, Organismos y Empresas Paraestatales)",
+Informacion_General,,periodo_inicio,2000-01-01,
+Informacion_General,,periodo_fin,2025-07-01,
+Informacion_General,,total_observaciones,103,
+Informacion_General,,frecuencia,Trimestral,
+Informacion_General,,total_variables,2189,
+Informacion_General,,unidad_monetaria,Miles de pesos mexicanos (MXN),
+Informacion_General,,tipo_cambio,Pesos corrientes (no ajustados por inflación),
+Informacion_General,,tipo_informacion,"Flujos (ingresos, gastos, financiamiento) y Saldos (disponibilidades)",
+Informacion_General,,metodologia_agregacion,Suma de valores mensuales para flujos; último mes del trimestre para saldos,
+Informacion_General,,fecha_actualizacion,2025-06-30,
+Columna_Identificadora,periodo,descripcion,Periodo (Fecha),Fecha de inicio del trimestre en formato ISO 8601. Representa el primer día del primer mes de cada trimestre.
+Columna_Identificadora,CICLO,descripcion,Año,Año al que corresponde el dato registrado
+Columna_Identificadora,TRIMESTRE,descripcion,Trimestre del Año,Número del trimestre dentro del año (1-4)
+Columna_Identificadora,Periodo,descripcion,Identificador Secuencial de Trimestre,Identificador secuencial único para cada trimestre desde el inicio de la serie
+Familia_Variables,FF_Financiamiento,prefijo,FF,Variables relacionadas con el financiamiento del balance público
+Familia_Variables,FF_Financiamiento,total_variables,16,"Representa las fuentes de financiamiento del sector público, desagregadas por origen (interno/externo) y tipo de institución financiera"
+Familia_Variables,IF_Intermediacion_Financiera,prefijo,IF,Variables de intermediación financiera de entidades financieras del sector público
+Familia_Variables,IF_Intermediacion_Financiera,total_variables,522,"Balance de operación, intermediación financiera y endeudamiento neto de instituciones financieras públicas"
+Familia_Variables,XA_Balance_Sector_Publico,prefijo,"XAA, XAB, XAC, XAD",Balance público consolidado del sector público mexicano
+Familia_Variables,XA_Balance_Sector_Publico,total_variables,244,Indicadores fiscales consolidados que muestran la situación financiera global del sector público
+Familia_Variables,XB_Gobierno_Federal,prefijo,"XBA, XBB, XBC",Balance financiero e ingresos/gastos específicos del Gobierno Federal
+Familia_Variables,XB_Gobierno_Federal,total_variables,72,"Situación fiscal específica del Gobierno Federal, excluyendo organismos y empresas"
+Familia_Variables,XC_Entidades_Control_Presupuestario_Directo,prefijo,XCA a XCH,"Ingresos, gastos y financiamiento de entidades de control presupuestario directo"
+Familia_Variables,XC_Entidades_Control_Presupuestario_Directo,total_variables,40,Desempeño financiero de organismos y empresas públicas con control presupuestario directo
+Familia_Variables,XD_GobFed_Seguridad_Social,prefijo,"XDA, XDB",Balance consolidado de Gobierno Federal y seguridad social
+Familia_Variables,XD_GobFed_Seguridad_Social,total_variables,34,Visión integrada del Gobierno Federal con instituciones de seguridad social
+Familia_Variables,XF_Recaudacion_Federal_Participable,prefijo,XFA,Recaudación Federal Participable por tipo de impuesto
+Familia_Variables,XF_Recaudacion_Federal_Participable,total_variables,44,Ingresos federales que se comparten con estados y municipios según la Ley de Coordinación Fiscal
+Familia_Variables,XK_Balances_Consolidados_Por_Entidad,prefijo,XKA a XKG,Balances financieros consolidados desagregados por entidad
+Familia_Variables,XK_Balances_Consolidados_Por_Entidad,total_variables,308,Situación financiera detallada de las principales entidades paraestatales
+Familia_Variables,XL_Entidades_Control_Presupuestario_Indirecto,prefijo,XLA a XM,Balances de entidades individuales de control presupuestario indirecto
+Familia_Variables,XL_Entidades_Control_Presupuestario_Indirecto,total_variables,616,Desempeño financiero individual de entidades con control presupuestario indirecto
+Familia_Variables,XN_Balance_Detallado_GobFed,prefijo,"XNA, XNB, XNC",Balance financiero del Gobierno Federal con máximo detalle
+Familia_Variables,XN_Balance_Detallado_GobFed,total_variables,243,"Visión exhaustiva de los ingresos, gastos y financiamiento del Gobierno Federal con clasificación funcional y administrativa"
+Familia_Variables,XO_Variables_Adicionales_Sector_Publico,prefijo,XOA,Variables adicionales y complementarias del sector público
+Familia_Variables,XO_Variables_Adicionales_Sector_Publico,total_variables,336,"Indicadores complementarios que permiten análisis funcional, sectorial y de sostenibilidad fiscal"
+Concepto_Clave,Balance_Presupuestario,definicion,Diferencia entre ingresos presupuestarios y gasto neto pagado del sector público. Un balance negativo indica déficit fiscal.,
+Concepto_Clave,Balance_Primario,definicion,Balance presupuestario excluyendo el costo financiero de la deuda. Mide la sostenibilidad fiscal sin considerar intereses.,
+Concepto_Clave,Balance_Público,definicion,Balance consolidado del sector público que incluye operaciones presupuestarias y no presupuestarias.,
+Concepto_Clave,Gasto_Programable,definicion,Gasto destinado a cumplir y atender funciones y responsabilidades gubernamentales. Incluye gasto corriente y de capital.,
+Concepto_Clave,Gasto_No_Programable,definicion,"Gasto que no está directamente vinculado a programas del gobierno. Incluye costo financiero, participaciones y ADEFAS.",
+Concepto_Clave,Ingresos_Petroleros,definicion,"Ingresos del sector público provenientes de la actividad petrolera, incluyendo derechos sobre hidrocarburos e IEPS gasolinas.",
+Concepto_Clave,Ingresos_Tributarios,definicion,"Ingresos del gobierno provenientes de impuestos (ISR, IVA, IEPS, etc.).",
+Concepto_Clave,Financiamiento_Neto,definicion,Incremento neto de pasivos del sector público durante un periodo. Incluye endeudamiento interno y externo.,
+Concepto_Clave,Ahorro_Corriente,definicion,Diferencia entre ingresos corrientes y gasto corriente. Mide la capacidad de generar recursos para inversión.,
+Concepto_Clave,Recaudación_Federal_Participable,definicion,Ingresos federales que se distribuyen a estados y municipios según fórmulas de la Ley de Coordinación Fiscal.,
+Concepto_Clave,ADEFAS,definicion,Adeudos de Ejercicios Fiscales Anteriores. Compromisos de pago de años previos.,
+Concepto_Clave,Control_Presupuestario_Directo,definicion,Entidades cuyos ingresos y gastos se incluyen íntegramente en el presupuesto federal.,
+Concepto_Clave,Control_Presupuestario_Indirecto,definicion,Entidades con autonomía presupuestaria pero que reciben transferencias del gobierno federal.,
+Metodologia,Proceso_Construccion,paso,1. Concatenación vertical de datasets históricos y actuales,
+Metodologia,Proceso_Construccion,paso,2. Filtrado de datos a partir del año 2000,
+Metodologia,Proceso_Construccion,paso,3. Mapeo de meses a trimestres,
+Metodologia,Proceso_Construccion,paso,4. Agregación temporal según tipo de información (Flujo vs Saldo),
+Metodologia,Proceso_Construccion,paso,5. Transformación a formato ancho con variables en columnas,
+Metodologia,Proceso_Construccion,paso,6. Limpieza: retención de variables con >=80% completitud,
+Metodologia,Proceso_Construccion,paso,7. Imputación de valores faltantes con ceros para completar la serie,
+Calidad_Datos,completitud,valor,100% después de imputación con ceros (80% mínimo original),
+Calidad_Datos,consistencia,valor,Alta - los datos provienen de registros presupuestarios oficiales de la SHCP,
+Calidad_Datos,actualidad,valor,Datos hasta julio 2025 con actualización mensual,
+Calidad_Datos,precision,valor,Miles de pesos - adecuada para análisis macroeconómico,
+Calidad_Datos,verificacion_calidad,valor,Verificar identidades contables: Balance = Ingresos - Gastos; Confirmar que sumas por componentes coinciden con totales; Validar que balances primarios excluyen correctamente el costo financiero; Comparar con estadísticas publicadas en los Informes Trimestrales de SHCP,
+Calidad_Datos,limitaciones,valor,Cambios metodológicos entre datasets históricos y actuales; Imputación con ceros puede introducir sesgos en series con datos genuinamente faltantes; Algunas entidades tienen series cortas por creación o extinción reciente; Variables de intermediación financiera pueden tener discontinuidades por reestructuraciones,
+Uso_Recomendado,analisis_temporal,recomendacion,Utilizar 'periodo' como índice temporal para análisis de series de tiempo. El formato fecha facilita operaciones de filtrado y visualización.,
+Uso_Recomendado,analisis_estacionalidad,recomendacion,Usar 'TRIMESTRE' para detectar patrones estacionales en ingresos y gastos públicos,
+Uso_Recomendado,analisis_sostenibilidad_fiscal,recomendacion,Comparar balances primarios con PIB para evaluar sostenibilidad de las finanzas públicas,
+Uso_Recomendado,analisis_dependencia_petrolera,recomendacion,Relacionar ingresos petroleros (XAB21) con ingresos totales (XAB_) para medir dependencia fiscal del petróleo,
+Uso_Recomendado,analisis_composicion_gasto,recomendacion,Usar familias XAC y XOA para desagregar gasto por función económica y clasificación administrativa,
+Uso_Recomendado,analisis_sectorial,recomendacion,Variables XK permiten comparar desempeño financiero entre entidades paraestatales,
+Uso_Recomendado,modelos_pronostico,recomendacion,Aplicar modelos ARIMA/SARIMA para proyectar variables clave como ingresos tributarios o balance presupuestario,
+Uso_Recomendado,modelos_multivariados,recomendacion,"Usar modelos VAR para analizar relaciones dinámicas entre ingresos, gastos y financiamiento",
+Uso_Recomendado,integracion_otras_fuentes,recomendacion,"Combinar con datos de PIB, inflación y tipo de cambio usando 'periodo' como llave de unión",

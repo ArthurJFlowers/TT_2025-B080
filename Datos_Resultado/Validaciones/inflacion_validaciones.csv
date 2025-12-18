@@ -1,0 +1,11 @@
+﻿check,valor,nota
+filas,219,inflacion
+columnas,7,inflacion
+min_periodo,1971-01-01,inflacion
+max_periodo,2025-07-01,inflacion
+completitud,100.0,inflacion:year
+completitud,100.0,inflacion:quarter
+completitud,100.0,inflacion:inpc_q_eoq
+completitud,100.0,inflacion:inpc_q_avg
+completitud,100.0,inflacion:inflacion_yoy_eoq
+completitud,100.0,inflacion:inflacion_yoy_avg

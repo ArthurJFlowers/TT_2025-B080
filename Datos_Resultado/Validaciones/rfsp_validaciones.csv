@@ -1,0 +1,14 @@
+﻿check,valor,nota
+filas,99,rfsp
+columnas,10,rfsp
+min_periodo,2001-01-01,rfsp
+max_periodo,2025-07-01,rfsp
+completitud,100.0,rfsp:CICLO
+completitud,100.0,rfsp:TRIMESTRE
+completitud,56.57,rfsp:rfsp_total_miles_mxn
+completitud,56.57,rfsp:rfsp_sin_ingresos_rec_miles
+completitud,71.72,rfsp:balance_tradicional_miles
+completitud,71.72,rfsp:ingresos_totales_miles
+completitud,71.72,rfsp:gasto_totales_miles
+completitud,71.72,rfsp:incurrimiento_neto_pasivos_miles
+completitud,71.72,rfsp:adq_neta_activos_fin_miles

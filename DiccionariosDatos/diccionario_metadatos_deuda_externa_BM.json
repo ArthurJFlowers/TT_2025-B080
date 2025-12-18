@@ -1,0 +1,163 @@
+{
+  "informacion_general": {
+    "titulo": "Deuda Externa Acumulada Total de México - Banco Mundial",
+    "titulo_original": "External debt stocks, total (DOD, current US$)",
+    "codigo_indicador": "DT.DOD.DECT.CD",
+    "fuente_primaria": "Banco Mundial",
+    "fuente_detallada": "Banco Mundial, Flujos Mundiales de Financiamiento para el Desarrollo",
+    "base_datos": "World Development Indicators (WDI)",
+    "pais": "México",
+    "codigo_pais": "MEX",
+    "region": "América Latina y el Caribe (excluido altos ingresos)",
+    "grupo_ingreso": "Ingreso mediano alto",
+    "periodo_temporal": "2000-2023",
+    "frecuencia": "Anual",
+    "unidad_medida": "Dólares estadounidenses (USD) a precios actuales",
+    "tipo_precios": "Precios corrientes (no ajustados por inflación)",
+    "ultima_actualizacion": "2025-07-01",
+    "url_fuente": "https://data.worldbank.org/indicator/DT.DOD.DECT.CD?locations=MX"
+  },
+  "definicion_indicador": {
+    "nombre_corto": "Deuda Externa Total",
+    "nombre_completo": "Deuda externa acumulada, total (DOD, US$ a precios actuales)",
+    "definicion_oficial": "La deuda externa total es el monto adeudado a los no residentes, que se reembolsa en divisas, bienes o servicios. La deuda externa total es la suma de la deuda a largo plazo pública, con garantía pública, y privada no garantizada, el uso del crédito del FMI y la deuda a corto plazo. La deuda a corto plazo incluye toda la deuda con un vencimiento original de un año o menos y los atrasos en los intereses de la deuda a largo plazo.",
+    "siglas": "DOD - Debt Outstanding and Disbursed (Deuda pendiente de pago y desembolsada)",
+    "componentes": [
+      "Deuda pública de largo plazo",
+      "Deuda privada de largo plazo con garantía pública",
+      "Deuda privada de largo plazo sin garantía pública",
+      "Uso del crédito del FMI",
+      "Deuda de corto plazo (vencimiento original ≤ 1 año)",
+      "Atrasos en intereses sobre deuda de largo plazo"
+    ],
+    "alcance_sectorial": "Incluye tanto deuda del sector público como del sector privado de México con acreedores no residentes",
+    "alcance_geografico": "Toda la economía mexicana en sus relaciones con el exterior"
+  },
+  "estructura_dataset": {
+    "numero_columnas": 2,
+    "numero_filas": 24,
+    "formato": "CSV (Comma-Separated Values)",
+    "encoding": "UTF-8",
+    "separador": ",",
+    "tipo_estructura": "Serie temporal anual simple"
+  },
+  "columnas": {
+    "Año": {
+      "nombre": "Año",
+      "descripcion": "Año calendario al que corresponde el dato de deuda externa reportado. Representa el periodo de referencia de la observación.",
+      "tipo_dato": "Integer",
+      "formato": "YYYY (año de cuatro dígitos)",
+      "rango_valores": "2000-2023",
+      "valores_ejemplo": "2000, 2001, 2002, ..., 2023",
+      "uso": "Variable temporal que permite ordenar cronológicamente las observaciones y realizar análisis de series de tiempo",
+      "restricciones": "Valores únicos, sin duplicados, secuencia continua sin años faltantes",
+      "periodicidad": "Anual (una observación por año)"
+    },
+    "Deuda_Total_USD": {
+      "nombre": "Deuda Total en Dólares Estadounidenses",
+      "descripcion": "Monto total de la deuda externa acumulada de México al cierre de cada año, expresado en dólares estadounidenses a precios corrientes. Representa el stock total de obligaciones externas pendientes de pago (tanto del sector público como del sector privado) con acreedores no residentes.",
+      "tipo_dato": "Float",
+      "unidad_medida": "Dólares estadounidenses (USD)",
+      "escala": "Unidades individuales (no en miles ni millones)",
+      "precios": "Precios corrientes/nominales del año correspondiente (no ajustados por inflación)",
+      "rango_observado": "Mínimo: 178,113,615,414.80 USD (2000), Máximo: 617,449,991,504.40 USD (2019)",
+      "interpretacion": "Valores más altos indican mayor endeudamiento externo total de la economía mexicana. El crecimiento a lo largo del tiempo puede reflejar mayor acceso a mercados internacionales, crecimiento económico que permite mayor capacidad de endeudamiento, o deterioro de la posición externa.",
+      "conversion_moneda": "Todas las obligaciones denominadas en monedas distintas al dólar fueron convertidas a dólares estadounidenses utilizando los tipos de cambio de cierre de año correspondientes",
+      "valores_nulos": "No hay valores nulos en el dataset. Todas las observaciones tienen datos completos.",
+      "precision_decimal": "Dos decimales",
+      "uso_analisis": [
+        "Seguimiento de la evolución del endeudamiento externo total de México",
+        "Análisis de tendencias de endeudamiento a largo plazo",
+        "Comparación con otros indicadores macroeconómicos (PIB, exportaciones, reservas)",
+        "Cálculo de ratios de sostenibilidad de deuda (Deuda/PIB, Deuda/Exportaciones)",
+        "Análisis de vulnerabilidad externa",
+        "Proyecciones de necesidades de financiamiento externo"
+      ]
+    }
+  },
+  "metodologia": {
+    "fuente_datos": "El Banco Mundial recopila esta información del Sistema de Notificación de la Deuda (Debtor Reporting System - DRS), complementado con datos de acreedores oficiales y del Fondo Monetario Internacional.",
+    "cobertura_sectorial": "Incluye deuda de todos los sectores: gobierno federal, gobiernos estatales y municipales, banco central, instituciones financieras públicas y privadas, empresas públicas, empresas privadas y otros agentes económicos residentes en México.",
+    "momento_registro": "Los saldos de deuda se registran al cierre de cada año calendario (31 de diciembre).",
+    "conversion_monedas": "Las obligaciones de deuda denominadas en monedas distintas al dólar estadounidense se convierten utilizando los tipos de cambio de mercado vigentes al cierre del año.",
+    "ajuste_precios": "Los datos están expresados en dólares corrientes (nominales) del año correspondiente, sin ajuste por inflación. Para análisis reales, se recomienda deflactar usando índices de precios apropiados.",
+    "revision_datos": "Los datos históricos pueden ser objeto de revisiones cuando se dispone de información más precisa o se realizan cambios metodológicos. El Banco Mundial actualiza periódicamente la serie completa.",
+    "comparabilidad_temporal": "La metodología de medición ha sido relativamente estable en el periodo 2000-2023, lo que permite comparaciones directas entre años. Sin embargo, cambios en la clasificación de instrumentos o en la cobertura de reportantes pueden afectar la comparabilidad estricta."
+  },
+  "diferencias_con_fuentes_nacionales": {
+    "cobertura_sectorial": "El indicador del Banco Mundial incluye tanto deuda pública como deuda privada, mientras que muchas estadísticas de la SHCP se enfocan principalmente en el sector público federal. Por lo tanto, los valores del Banco Mundial son significativamente mayores.",
+    "definiciones": "La definición de deuda externa del Banco Mundial sigue los lineamientos del Manual de Estadísticas de la Deuda Externa del FMI, que puede diferir en algunos aspectos técnicos de las definiciones nacionales.",
+    "momento_corte": "Pueden existir diferencias en los momentos de corte de información entre fuentes nacionales e internacionales, afectando ligeramente los saldos reportados.",
+    "conversion_monedas": "Los tipos de cambio utilizados para conversión de monedas pueden variar entre el Banco Mundial y las autoridades nacionales.",
+    "recomendacion": "Para análisis del sector público mexicano específicamente, se recomienda utilizar las estadísticas de la SHCP. Para análisis de la posición externa total de la economía o comparaciones internacionales, utilizar los datos del Banco Mundial."
+  },
+  "contexto_historico": {
+    "periodo_2000_2008": "Periodo de relativa estabilidad con crecimiento moderado de la deuda externa. México fortaleció su posición externa tras las crisis de los años 90.",
+    "crisis_financiera_2008_2009": "La crisis financiera global tuvo impacto moderado en la deuda externa de México, que mostró resiliencia comparada con otras economías emergentes.",
+    "periodo_2010_2019": "Crecimiento sostenido de la deuda externa, alcanzando un máximo en 2019, reflejando mayor integración financiera internacional y acceso a mercados de capitales.",
+    "pandemia_covid19_2020": "Ligera reducción de la deuda externa en 2020 debido a contracción económica global y menor actividad de financiamiento internacional.",
+    "periodo_2021_2023": "Estabilización de la deuda externa en niveles cercanos a 600 mil millones de dólares, con variaciones influenciadas por tipos de cambio y condiciones de mercados financieros internacionales."
+  },
+  "indicadores_relacionados": {
+    "deuda_pib": "Ratio de Deuda Externa / PIB - Mide la carga de deuda en relación al tamaño de la economía",
+    "deuda_exportaciones": "Ratio de Deuda Externa / Exportaciones - Indica capacidad de servicio de deuda con ingresos de divisas",
+    "deuda_reservas": "Ratio de Deuda Externa / Reservas Internacionales - Evalúa cobertura de la deuda con activos líquidos externos",
+    "servicio_deuda": "Servicio de la Deuda Externa - Flujos de amortización e intereses pagados en el periodo",
+    "deuda_corto_plazo": "Deuda Externa de Corto Plazo / Deuda Total - Indica presión de refinanciamiento inmediato",
+    "deuda_publica": "Deuda Externa del Sector Público - Subcomponente de la deuda total (disponible en fuentes SHCP)",
+    "deuda_privada": "Deuda Externa del Sector Privado - Complemento de la deuda pública para obtener el total"
+  },
+  "uso_recomendado": {
+    "analisis_macro": "Utilizar esta serie para análisis macroeconómicos de largo plazo sobre la posición externa de México, complementando con datos de PIB, balanza de pagos y reservas internacionales.",
+    "comparaciones_internacionales": "Ideal para comparaciones con otros países de la región o economías similares, ya que el Banco Mundial proporciona datos homogéneos para todos los países.",
+    "ratios_sostenibilidad": "Calcular indicadores de sostenibilidad de deuda combinando con datos de PIB, exportaciones, reservas internacionales y crecimiento económico.",
+    "analisis_tendencias": "Analizar la tendencia de largo plazo del endeudamiento externo, identificando periodos de acumulación o desacumulación de deuda.",
+    "investigacion_academica": "Fuente apropiada para investigación académica debido a su consistencia metodológica, cobertura temporal y respaldo institucional del Banco Mundial.",
+    "proyecciones": "Base para construir proyecciones de deuda externa utilizando supuestos sobre crecimiento económico, déficit de cuenta corriente, tipos de cambio y tasas de interés.",
+    "limitaciones": "No utilizar para análisis detallado por instrumento, acreedor o plazo, ya que este dataset solo proporciona el agregado total. Para ese nivel de detalle, referirse a las estadísticas de la SHCP o del Banco de México."
+  },
+  "notas_tecnicas": {
+    "actualizacion": "El Banco Mundial actualiza estos datos típicamente con un rezago de varios meses después del cierre del año. Los datos más recientes pueden ser preliminares y sujetos a revisión.",
+    "consistencia_interna": "El dataset tiene 24 observaciones continuas sin años faltantes, lo que facilita el análisis de series de tiempo y la aplicación de modelos econométricos.",
+    "valores_extremos": "El valor máximo observado corresponde a 2019 (617.4 mil millones USD). El crecimiento desde el mínimo de 2000 (178.1 mil millones USD) representa un incremento de 246.7%, o 3.5 veces en términos nominales.",
+    "ajuste_inflacion": "Para obtener valores reales, se recomienda deflactar usando el Índice de Precios al Consumidor de Estados Unidos o un deflactor del PIB apropiado, dada la denominación en dólares.",
+    "uso_estadistico": "La serie es estacionaria en diferencias logarítmicas, lo que la hace apropiada para modelos econométricos de series de tiempo como ARIMA, VAR o modelos de corrección de errores.",
+    "compatibilidad": "Este dataset es compatible con el archivo 'Datos_Macro.csv' mediante unión por año, y puede complementarse con el dataset de deuda de la SHCP agregando por trimestre para obtener mayor granularidad temporal."
+  },
+  "calidad_datos": {
+    "completitud": "100% - No hay valores faltantes en ninguna de las 24 observaciones",
+    "precision": "Alta - Los datos provienen de fuentes oficiales compiladas por el Banco Mundial bajo estándares internacionales",
+    "consistencia": "Alta - Metodología consistente aplicada a lo largo de toda la serie temporal",
+    "oportunidad": "Los datos se actualizan anualmente con rezago de varios meses. Última actualización registrada: julio 2025",
+    "confiabilidad": "Muy alta - El Banco Mundial es una fuente reconocida internacionalmente para estadísticas de deuda externa",
+    "limitaciones_conocidas": [
+      "No incluye desagregación por sector (público/privado)",
+      "No incluye desagregación por plazo (corto/largo)",
+      "No incluye desagregación por instrumento financiero",
+      "No incluye desagregación por acreedor o país",
+      "Expresado en precios corrientes sin ajuste por inflación",
+      "Posibles diferencias metodológicas con estadísticas nacionales"
+    ]
+  },
+  "referencias": {
+    "metodologia_general": "World Bank. International Debt Statistics 2024. Washington, DC: World Bank.",
+    "manual_referencia": "International Monetary Fund. External Debt Statistics: Guide for Compilers and Users, 2013.",
+    "portal_datos": "World Bank Open Data - https://data.worldbank.org",
+    "documentacion_tecnica": "World Bank. Quarterly External Debt Statistics (QEDS) - Methodological Notes.",
+    "definiciones_conceptuales": "IMF and World Bank. Guidelines for Public Debt Management, 2014."
+  },
+  "contacto_asistencia": {
+    "organizacion": "Banco Mundial",
+    "departamento": "Grupo de Gestión de Datos sobre el Desarrollo",
+    "sitio_web": "https://data.worldbank.org",
+    "soporte_tecnico": "https://datahelpdesk.worldbank.org",
+    "reporte_errores": "Para reportar errores o inconsistencias en los datos, utilizar el portal de soporte técnico del Banco Mundial"
+  },
+  "licencia_uso": {
+    "tipo_licencia": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+    "derechos": "Los datos del Banco Mundial son de libre acceso bajo licencia abierta",
+    "requisitos": "Se requiere atribución apropiada al Banco Mundial como fuente de los datos",
+    "citacion_sugerida": "Banco Mundial (2025). Deuda externa acumulada, total (DOD, US$ a precios actuales) - México. Extraído de https://data.worldbank.org/indicator/DT.DOD.DECT.CD?locations=MX",
+    "restricciones": "Los datos pueden ser utilizados, copiados, distribuidos y adaptados libremente con la atribución apropiada"
+  }
+}

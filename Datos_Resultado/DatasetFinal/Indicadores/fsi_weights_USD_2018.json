@@ -1,0 +1,10 @@
+{
+  "tag": "USD_2018",
+  "weights": {
+    "solvencia": 0.3,
+    "externa": 0.2,
+    "mercado": 0.2,
+    "liquidez": 0.15,
+    "fiscal": 0.15
+  }
+}

@@ -1,0 +1,7 @@
+﻿check,valor,nota
+filas,136,tipo_cambio
+columnas,3,tipo_cambio
+min_periodo,1991-10-01,tipo_cambio
+max_periodo,2025-07-01,tipo_cambio
+completitud,100.0,tipo_cambio:tcn_mean
+completitud,100.0,tipo_cambio:tcn_eop

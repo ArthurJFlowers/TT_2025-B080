@@ -1,0 +1,63 @@
+{
+    "dataset": {
+        "nombre": "Inflación Trimestral INPC",
+        "descripcion": "Índice Nacional de Precios al Consumidor (INPC) agregado a nivel trimestral con cálculo de inflación interanual",
+        "fuente": "Instituto Nacional de Estadística y Geografía (INEGI)",
+        "url": "https://www.inegi.org.mx/programas/inpc/2018a/",
+        "base": "Segunda quincena de julio 2018 = 100",
+        "periodicidad": "Trimestral",
+        "periodo_cobertura": "1971-Q1 a 2025-Q3",
+        "num_observaciones": 214,
+        "fecha_actualizacion": "2025-10-06"
+    },
+    "metodologia": {
+        "agregacion_temporal": "Se toma el valor del INPC del último mes de cada trimestre (marzo, junio, septiembre, diciembre)",
+        "calculo_inflacion": "Variación porcentual interanual: ((INPC_t - INPC_t-4) / INPC_t-4) * 100",
+        "notas": [
+            "Los primeros 4 trimestres no tienen inflación calculada por falta de base de comparación",
+            "La inflación interanual es el indicador usado por Banco de México para política monetaria"
+        ]
+    },
+    "columnas": {
+        "periodo": {
+            "tipo": "string",
+            "formato": "DD/MM/YYYY",
+            "descripcion": "Fecha del primer día del trimestre",
+            "ejemplo": "01/01/2025",
+            "valores_posibles": "01/01/YYYY, 01/04/YYYY, 01/07/YYYY, 01/10/YYYY"
+        },
+        "year": {
+            "tipo": "integer",
+            "formato": "YYYY",
+            "descripcion": "Año del periodo",
+            "ejemplo": 2025,
+            "rango": [
+                1971,
+                2025
+            ]
+        },
+        "quarter": {
+            "tipo": "integer",
+            "formato": "N",
+            "descripcion": "Número de trimestre (Q1=Ene-Mar, Q2=Abr-Jun, Q3=Jul-Sep, Q4=Oct-Dic)",
+            "ejemplo": 1,
+            "rango": [
+                1,
+                4
+            ]
+        },
+        "inflacion_yoy": {
+            "tipo": "float",
+            "unidad": "porcentaje",
+            "descripcion": "Inflación interanual trimestral (Year-over-Year)",
+            "ejemplo": 3.52,
+            "interpretacion": "Variación porcentual del nivel de precios respecto al mismo trimestre del año anterior",
+            "estadisticas": {
+                "media": 21.33,
+                "desv_std": 30.19,
+                "minimo": 2.13,
+                "maximo": 175.83
+            }
+        }
+    }
+}

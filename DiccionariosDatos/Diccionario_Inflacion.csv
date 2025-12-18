@@ -1,0 +1,37 @@
+Campo,Valor,Información Adicional,Ejemplo
+INFORMACIÓN DEL DATASET,,,
+Nombre,Inflación Trimestral INPC,,
+Descripción,Índice Nacional de Precios al Consumidor (INPC) agregado a nivel trimestral con cálculo de inflación interanual,,
+Fuente,Instituto Nacional de Estadística y Geografía (INEGI),,
+URL,https://www.inegi.org.mx/programas/inpc/2018a/,,
+Base,Segunda quincena de julio 2018 = 100,,
+Periodicidad,Trimestral,,
+Periodo Cobertura,1971-Q1 a 2025-Q3,,
+Observaciones,214,,
+Fecha Actualización,2025-10-06,,
+,,,
+METODOLOGÍA,,,
+Agregación Temporal,"Se toma el valor del INPC del último mes de cada trimestre (marzo, junio, septiembre, diciembre)",,
+Cálculo Inflación,Variación porcentual interanual: ((INPC_t - INPC_t-4) / INPC_t-4) * 100,,
+Nota 1,Los primeros 4 trimestres no tienen inflación calculada por falta de base de comparación,,
+Nota 2,La inflación interanual es el indicador usado por Banco de México para política monetaria,,
+,,,
+COLUMNAS,Tipo,Descripción,Ejemplo
+,,,
+periodo,string,Fecha del primer día del trimestre,01/01/2025
+  - Formato,DD/MM/YYYY,,
+  - Valores posibles,"01/01/YYYY, 01/04/YYYY, 01/07/YYYY, 01/10/YYYY",,
+,,,
+year,integer,Año del periodo,2025
+  - Formato,YYYY,,
+  - Rango,"[1971, 2025]",,
+,,,
+quarter,integer,"Número de trimestre (Q1=Ene-Mar, Q2=Abr-Jun, Q3=Jul-Sep, Q4=Oct-Dic)",1
+  - Formato,N,,
+  - Rango,"[1, 4]",,
+,,,
+inflacion_yoy,float,Inflación interanual trimestral (Year-over-Year),3.52
+  - Unidad,porcentaje,,
+  - Interpretación,Variación porcentual del nivel de precios respecto al mismo trimestre del año anterior,,
+  - Estadísticas,"Media: 21.33%, Desv: 30.19%, Min: 2.13%, Max: 175.83%",,
+,,,

@@ -1,0 +1,97 @@
+Categoria,Subcategoria,Campo,Valor
+Información General,Nombre Dataset,Tipo de Cambio Nominal Trimestral,
+Información General,Descripción,"Tipo de cambio promedio trimestral del peso mexicano frente al dólar estadounidense. Serie SF329 de Banxico: Tipo de cambio para solventar obligaciones denominadas en moneda extranjera, fecha de liquidación.",
+Información General,Fuente,Banco de México (Banxico),
+Información General,URL Fuente,https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?accion=consultarCuadro&idCuadro=CF86&locale=es&sector=6,
+Información General,Serie Banxico,SF329,
+Información General,Fecha Actualización,2025-10-06,
+Información General,Periodicidad,Trimestral,
+Información General,Periodo Disponible,1968-Q1 a 2025-Q3,
+Información General,Número Observaciones,231,
+Información General,Unidad,Pesos mexicanos por dólar estadounidense (MXN/USD),
+Información General,Método Agregación,Promedio aritmético simple del tipo de cambio diario dentro de cada trimestre,
+Columnas,Columna 1,nombre,periodo
+Columnas,Columna 1,tipo,datetime64
+Columnas,Columna 1,formato,YYYY-MM-DD
+Columnas,Columna 1,descripcion,Fecha del primer día del trimestre
+Columnas,Columna 1,ejemplo,1968-01-01
+Columnas,Columna 1,notas,"Representa el inicio del periodo trimestral. Los trimestres inician: 01/01, 01/04, 01/07, 01/10"
+Columnas,Columna 2,nombre,tcn
+Columnas,Columna 2,tipo,float64
+Columnas,Columna 2,formato,
+Columnas,Columna 2,descripcion,Tipo de cambio nominal promedio trimestral
+Columnas,Columna 2,ejemplo,18.6478
+Columnas,Columna 2,notas,Valores más altos indican depreciación del peso (más pesos por dólar). Valores más bajos indican apreciación del peso.
+Columnas,Columna 2,unidad,pesos por dólar (MXN/USD)
+Columnas,Columna 2,formula,Promedio aritmético de los tipos de cambio diarios del trimestre
+Columnas,Columna 2,interpretacion,Precio promedio del dólar en pesos mexicanos durante el trimestre. Usado para solventar obligaciones en moneda extranjera.
+Contexto Histórico,Evento 1,1968-1976: Tipo de cambio fijo de 12.50 pesos por dólar (0.0125 en pesos viejos),
+Contexto Histórico,Evento 2,"1976: Primera gran devaluación, el peso pasa de 12.50 a 22.57 MXN/USD",
+Contexto Histórico,Evento 3,"1982: Crisis de la deuda, segunda gran devaluación",
+Contexto Histórico,Evento 4,"1993: Creación del 'nuevo peso' (se eliminan 3 ceros). Conversión: 1 nuevo peso = 1,000 pesos viejos",
+Contexto Histórico,Evento 5,"1994-1995: Crisis del 'Efecto Tequila', devaluación de ~100%",
+Contexto Histórico,Evento 6,1995: Transición a régimen de tipo de cambio flotante,
+Contexto Histórico,Evento 7,"2008-2009: Crisis financiera global, depreciación significativa",
+Contexto Histórico,Evento 8,"2020: Pandemia COVID-19, tipo de cambio alcanza máximo histórico (>25 MXN/USD intradía)",
+Contexto Histórico,Evento 9,2025: Estabilización relativa en torno a 18-20 MXN/USD,
+Notas Generales,Nota 1,Los valores muy bajos en 1968-1992 (ej: 0.0125) corresponden a 'pesos viejos' antes de la reconversión monetaria de 1993,
+Notas Generales,Nota 2,"Para convertir pesos viejos a nuevos pesos: dividir entre 1,000",
+Notas Generales,Nota 3,"La serie SF329 es la más completa, con datos desde 1960",
+Notas Generales,Nota 4,Banxico publica diariamente el tipo de cambio FIX (para solventar obligaciones),
+Notas Generales,Nota 5,El tipo de cambio FIX se determina con base en un promedio de cotizaciones del mercado de cambios al mayoreo,
+Notas Generales,Nota 6,Datos históricos 1960-1992 están en pesos viejos y no se han reconvertido en este dataset,
+Notas Generales,Nota 7,"Para análisis económico post-1993, considerar solo datos desde 1993 en adelante o hacer la conversión manual",
+Aplicaciones,Aplicación 1,Análisis de volatilidad cambiaria,
+Aplicaciones,Aplicación 2,Modelos de predicción de tipo de cambio,
+Aplicaciones,Aplicación 3,Evaluación de paridad del poder adquisitivo (PPP),
+Aplicaciones,Aplicación 4,Análisis de competitividad exportadora,
+Aplicaciones,Aplicación 5,Cálculo de tipo de cambio real (TCR) combinado con inflación,
+Aplicaciones,Aplicación 6,Modelos de equilibrio general de economía abierta,
+Aplicaciones,Aplicación 7,Análisis de transmisión de política monetaria,
+Aplicaciones,Aplicación 8,Evaluación de riesgo cambiario para empresas con deuda en dólares,
+Aplicaciones,Aplicación 9,Construcción de índices de condiciones financieras,
+Aplicaciones,Aplicación 10,Análisis de spillovers financieros internacionales,
+Variables Derivadas,Variable 1,Variación porcentual trimestral: ((tcn_t - tcn_t-1) / tcn_t-1) * 100,
+Variables Derivadas,Variable 2,Variación porcentual interanual: ((tcn_t - tcn_t-4) / tcn_t-4) * 100,
+Variables Derivadas,Variable 3,Tipo de cambio real (TCR): tcn * (Inflación_USA / Inflación_MEX),
+Variables Derivadas,Variable 4,Logaritmo natural: ln(tcn) para análisis de estacionariedad,
+Variables Derivadas,Variable 5,Volatilidad móvil: desviación estándar rolling de variaciones porcentuales,
+Variables Derivadas,Variable 6,Desvío de tendencia: tcn - HP_filter(tcn) o tcn - MA(tcn),
+Variables Derivadas,Variable 7,Índice de apreciación/depreciación base 100: (tcn / tcn_base) * 100,
+Variables Derivadas,Variable 8,Carry trade return: diferencial de tasas de interés ajustado por variación cambiaria,
+Estadísticas Descriptivas,tcn,media,7.6248
+Estadísticas Descriptivas,tcn,mediana,7.8164
+Estadísticas Descriptivas,tcn,desviacion_estandar,7.1851
+Estadísticas Descriptivas,tcn,minimo,0.0125
+Estadísticas Descriptivas,tcn,maximo,23.3579
+Estadísticas Descriptivas,tcn,q1,0.0546
+Estadísticas Descriptivas,tcn,q3,12.9292
+Estadísticas Descriptivas,tcn,periodo_minimo,1968-Q1
+Estadísticas Descriptivas,tcn,periodo_maximo,2020-Q2
+Estadísticas Descriptivas,tcn,observacion_minimo,Corresponde al periodo de tipo de cambio fijo en pesos viejos
+Estadísticas Descriptivas,tcn,observacion_maximo,Crisis pandemia COVID-19 en 2020
+Metodología Banxico,Tipo Cambio FIX,Tipo de cambio para solventar obligaciones denominadas en moneda extranjera,
+Metodología Banxico,Determinación,Promedio de cotizaciones del mercado de cambios al mayoreo para operaciones liquidables el segundo día hábil bancario siguiente,
+Metodología Banxico,Horario Determinación,"Entre las 10:00 y las 12:00 horas, tiempo del centro de México",
+Metodología Banxico,Publicación,Se publica en el Diario Oficial de la Federación (DOF) un día hábil después de su determinación,
+Metodología Banxico,Uso Legal,Utilizado para solventar obligaciones denominadas en dólares pagaderas en México,
+Calidad Datos,Completitud,100% - Sin datos faltantes en el periodo disponible,
+Calidad Datos,Consistencia,Alta - Datos oficiales de Banxico sin modificaciones,
+Calidad Datos,Limitación 1,Datos 1968-1992 en pesos viejos (no reconvertidos),
+Calidad Datos,Limitación 2,Cambios de régimen cambiario dificultan análisis de toda la serie,
+Calidad Datos,Limitación 3,Tipo de cambio fijo 1968-1976 no refleja presiones de mercado,
+Calidad Datos,Limitación 4,Periodos de control de cambios con tipo de cambio múltiple no capturados,
+Calidad Datos,Recomendación 1,"Para análisis estructural moderno, usar datos desde 1995 (flotación)",
+Calidad Datos,Recomendación 2,"Para series largas, considerar hacer reconversión de pesos viejos",
+Calidad Datos,Recomendación 3,Incluir dummies para cambios de régimen en modelos econométricos,
+Calidad Datos,Recomendación 4,Complementar con datos de volatilidad implícita en opciones para análisis de riesgo,
+Referencias,Documentación Banxico,https://www.banxico.org.mx/SieInternet/,
+Referencias,Metodología Tipo Cambio,https://www.banxico.org.mx/mercados/d/{5E60BE6B-8F4C-8F51-5AF4-B85A2A1C7A2E}.pdf,
+Referencias,Serie Relacionada 1,SF17908: Tipo de cambio FIX determinación,
+Referencias,Serie Relacionada 2,SF18561: Tipo de cambio FIX publicación DOF,
+Referencias,Serie Relacionada 3,SF17886: Tipo de cambio interbancario apertura-compra,
+Referencias,Serie Relacionada 4,SF60653: Tipo de cambio cierre (promedio diario),
+Referencias,Dataset Complementario 1,Inflacion_Trimestral.csv,
+Referencias,Dataset Complementario 2,PIB_Trimestral.csv,
+Referencias,Dataset Complementario 3,Tasas_Interes_Banxico.csv,
+Referencias,Dataset Complementario 4,Reservas_Internacionales.csv,

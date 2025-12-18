@@ -1,0 +1,126 @@
+﻿Categoria,Campo,Valor,Descripcion
+Informacion_General,titulo,Deuda Externa del Sector Público Federal de México - Serie Trimestral,
+Informacion_General,fuente,Secretaría de Hacienda y Crédito Público (SHCP),
+Informacion_General,subsecretaria,Subsecretaría de Hacienda y Crédito Público,
+Informacion_General,unidad_responsable,Unidad de Planeación Económica de la Hacienda Pública,
+Informacion_General,direccion_general,Dirección General de Estadísticas de la Hacienda Pública,
+Informacion_General,periodo_temporal,2000-T1 a 2025-T3,
+Informacion_General,frecuencia,Trimestral,
+Informacion_General,unidad_base,Millones de dólares estadounidenses (USD),
+Informacion_General,tipo_registro,"Valor nominal para saldos, base efectivo para flujos",
+Informacion_General,ambito_geografico,Nacional - Federal,
+Informacion_General,ultima_actualizacion,30/06/2025,
+Columna_Identificadora,periodo,Periodo,Fecha de inicio del trimestre en formato ISO 8601 (YYYY-MM-DD). Representa el primer día del trimestre correspondiente.
+Columna_Identificadora,CICLO,Ciclo (Año),Año al que corresponde el dato registrado en formato numérico de cuatro dígitos.
+Columna_Identificadora,TRIMESTRE,Trimestre,Número del trimestre dentro del año correspondiente.
+Columna_Identificadora,Periodo,Periodo Secuencial,"Identificador secuencial del trimestre en formato 'Trimestre_N', donde N es el número consecutivo desde el inicio de la serie."
+Variable_Deuda,XEB00_Saldo_a,Saldo Neto de Deuda Externa del Sector Público,"Representa el saldo neto de la deuda externa del sector público federal, calculado como la deuda bruta menos los activos financieros en moneda extranjera. Es el indicador principal de la posición neta de deuda externa."
+Variable_Deuda,XEB10_Activos_Financieros_en_Moneda_Extranjera,Activos Financieros en Moneda Extranjera,"Activos financieros del sector público federal denominados en moneda extranjera, incluyendo reservas, depósitos y otros instrumentos líquidos en divisas."
+Variable_Deuda,XEB20_Deuda_Bruta,Deuda Bruta Externa del Sector Público,Total de pasivos externos del sector público federal sin deducir activos financieros. Representa el monto total de obligaciones con acreedores extranjeros.
+Variable_Deuda,XEB30_Estructura_por_plazo,Deuda Total por Estructura de Plazo,"Clasificación completa de la deuda externa según su vencimiento, agrupada en largo y corto plazo. Suma de XEB3010 y XEB3020."
+Variable_Deuda,XEB3010_Largo_plazo,Deuda de Largo Plazo,"Deuda externa con vencimiento original mayor a un año. Incluye bonos, créditos sindicados y financiamiento de organismos internacionales."
+Variable_Deuda,XEB3020_Corto_plazo,Deuda de Corto Plazo,"Deuda externa con vencimiento original igual o menor a un año. Incluye líneas de crédito revolventes, papel comercial y financiamiento de comercio exterior."
+Variable_Deuda,XEB40_Estructura_por_Usuario,Deuda Total por Estructura de Usuario,Clasificación completa de la deuda externa según la entidad deudora. Suma de las tres categorías principales de usuarios del sector público federal.
+Variable_Deuda,XEB4010_Gobierno_Federal,Deuda del Gobierno Federal,"Deuda externa contraída directamente por el Gobierno Federal, incluyendo el Ejecutivo y sus dependencias centralizadas. Principal componente de la deuda pública externa."
+Variable_Deuda,XEB4010L_Largo_plazo,Deuda del Gobierno Federal - Largo Plazo,"Componente de largo plazo de la deuda del Gobierno Federal, con vencimiento original mayor a un año."
+Variable_Deuda,XEB4010C_Corto_plazo,Deuda del Gobierno Federal - Corto Plazo,"Componente de corto plazo de la deuda del Gobierno Federal, con vencimiento original igual o menor a un año."
+Variable_Deuda,XEB4020_Organismos_y_Empresas,Deuda de Organismos y Empresas Paraestatales No Financieras,"Deuda externa de entidades paraestatales no financieras bajo control presupuestario, incluyendo empresas productivas del Estado como PEMEX y CFE."
+Variable_Deuda,XEB4020L_Largo_plazo,Deuda de Organismos y Empresas - Largo Plazo,Componente de largo plazo de la deuda de organismos y empresas paraestatales no financieras.
+Variable_Deuda,XEB4020C_Corto_plazo,Deuda de Organismos y Empresas - Corto Plazo,Componente de corto plazo de la deuda de organismos y empresas paraestatales no financieras.
+Variable_Deuda,XEB4030_Banca_de_desarrollo,Deuda de la Banca de Desarrollo,"Deuda externa de instituciones financieras públicas de desarrollo, incluyendo Nacional Financiera (NAFIN), Banco Nacional de Comercio Exterior (BANCOMEXT) y Banco Nacional de Obras y Servicios Públicos (BANOBRAS)."
+Variable_Deuda,XEB4030L_Largo_plazo,Deuda de Banca de Desarrollo - Largo Plazo,Componente de largo plazo de la deuda de la banca de desarrollo.
+Variable_Deuda,XEB4030C_Corto_plazo,Deuda de Banca de Desarrollo - Corto Plazo,Componente de corto plazo de la deuda de la banca de desarrollo.
+Variable_Deuda,XEBA20_Disposición,Disposición Total de Deuda Externa,Nuevos desembolsos o financiamiento externo recibido durante el trimestre. Representa las entradas de recursos por endeudamiento externo.
+Variable_Deuda,XEBA30_Estructura_por_plazo,Disposición Total por Estructura de Plazo,Clasificación de las nuevas disposiciones según su plazo de vencimiento original.
+Variable_Deuda,XEBA3010_Largo_plazo,Disposición de Largo Plazo,Nuevos desembolsos de deuda con vencimiento original mayor a un año.
+Variable_Deuda,XEBA3020_Corto_plazo,Disposición de Corto Plazo,Nuevos desembolsos de deuda con vencimiento original igual o menor a un año.
+Variable_Deuda,XEBA40_Estructura_por_usuario,Disposición Total por Estructura de Usuario,Clasificación de las nuevas disposiciones según la entidad que recibe el financiamiento.
+Variable_Deuda,XEBA4010_Gobierno_Federal,Disposición del Gobierno Federal,Nuevos desembolsos de deuda externa recibidos directamente por el Gobierno Federal durante el trimestre.
+Variable_Deuda,XEBA4020_Organismos_y_empresas,Disposición de Organismos y Empresas,Nuevos desembolsos de deuda externa recibidos por organismos y empresas paraestatales no financieras durante el trimestre.
+Variable_Deuda,XEBA4030_Banca_de_Desarrollo,Disposición de Banca de Desarrollo,Nuevos desembolsos de deuda externa recibidos por la banca de desarrollo durante el trimestre.
+Variable_Deuda,XEBB20_Amortización,Amortización Total de Deuda Externa,"Pagos de principal de deuda externa realizados durante el trimestre. No incluye pagos de intereses, solo la reducción del capital adeudado."
+Variable_Deuda,XEBB30_Estructura_por_plazo,Amortización Total por Estructura de Plazo,Clasificación de las amortizaciones según el plazo original de la deuda pagada.
+Variable_Deuda,XEBB3010_Largo_plazo,Amortización de Largo Plazo,Pagos de principal de deuda que originalmente fue contratada a largo plazo.
+Variable_Deuda,XEBB3020_Corto_plazo,Amortización de Corto Plazo,Pagos de principal de deuda que originalmente fue contratada a corto plazo.
+Variable_Deuda,XEBB40_Estructura_por_usuario,Amortización Total por Estructura de Usuario,Clasificación de las amortizaciones según la entidad que realiza el pago.
+Variable_Deuda,XEBB4010_Gobierno_Federal,Amortización del Gobierno Federal,Pagos de principal de deuda externa realizados directamente por el Gobierno Federal durante el trimestre.
+Variable_Deuda,XEBB4020_Organismos_y_empresas,Amortización de Organismos y Empresas,Pagos de principal de deuda externa realizados por organismos y empresas paraestatales no financieras durante el trimestre.
+Variable_Deuda,XEBB4030_Banca_de_desarrollo,Amortización de Banca de Desarrollo,Pagos de principal de deuda externa realizados por la banca de desarrollo durante el trimestre.
+Variable_Deuda,XEBC20_Endeudamiento_Neto,Endeudamiento Neto Total,Diferencia entre disposiciones y amortizaciones durante el trimestre. Representa el cambio en el stock de deuda atribuible a flujos de financiamiento. Calculado como XEBA20 menos XEBB20.
+Variable_Deuda,XEBC30_Estructura_por_plazo,Endeudamiento Neto por Estructura de Plazo,Clasificación del endeudamiento neto según el plazo de las operaciones.
+Variable_Deuda,XEBC3010_Largo_plazo,Endeudamiento Neto de Largo Plazo,Diferencia entre disposiciones y amortizaciones de deuda de largo plazo.
+Variable_Deuda,XEBC3020_Corto_plazo,Endeudamiento Neto de Corto Plazo,Diferencia entre disposiciones y amortizaciones de deuda de corto plazo.
+Variable_Deuda,XEBC40_Estructura_por_usuario,Endeudamiento Neto por Estructura de Usuario,Clasificación del endeudamiento neto según la entidad deudora.
+Variable_Deuda,XEBC4010_Gobierno_Federal,Endeudamiento Neto del Gobierno Federal,Diferencia entre disposiciones y amortizaciones del Gobierno Federal durante el trimestre.
+Variable_Deuda,XEBC4020_Organismos_y_Empresas,Endeudamiento Neto de Organismos y Empresas,Diferencia entre disposiciones y amortizaciones de organismos y empresas paraestatales no financieras durante el trimestre.
+Variable_Deuda,XEBC4030_Banca_de_desarrollo,Endeudamiento Neto de Banca de Desarrollo,Diferencia entre disposiciones y amortizaciones de la banca de desarrollo durante el trimestre.
+Variable_Deuda,XEBD20_Ajustes,Ajustes Totales al Saldo de Deuda,"Variaciones en el saldo de deuda no atribuibles a disposiciones o amortizaciones. Incluyen efectos cambiarios, condonaciones, cambios en valoración y otros ajustes contables."
+Variable_Deuda,XEBD30_Estructura_por_plazo,Ajustes por Estructura de Plazo,Clasificación de los ajustes según el plazo de la deuda afectada.
+Variable_Deuda,XEBD3010_Largo_plazo,Ajustes de Largo Plazo,Ajustes aplicados a la deuda de largo plazo durante el trimestre.
+Variable_Deuda,XEBD3020_Corto_plazo,Ajustes de Corto Plazo,Ajustes aplicados a la deuda de corto plazo durante el trimestre.
+Variable_Deuda,XEBD40_Estructura_por_usuario,Ajustes por Estructura de Usuario,Clasificación de los ajustes según la entidad afectada.
+Variable_Deuda,XEBD4010_Gobierno_Federal,Ajustes del Gobierno Federal,Ajustes aplicados a la deuda del Gobierno Federal durante el trimestre.
+Variable_Deuda,XEBD4020_Organismos_y_empresas,Ajustes de Organismos y Empresas,Ajustes aplicados a la deuda de organismos y empresas paraestatales no financieras durante el trimestre.
+Variable_Deuda,XEBD4030_Banca_de_Desarrollo,Ajustes de Banca de Desarrollo,Ajustes aplicados a la deuda de la banca de desarrollo durante el trimestre.
+Variable_Deuda,XEC_Por_Fuentes_de_Financiamiento,Deuda Total por Fuentes de Financiamiento,Clasificación completa del saldo de deuda externa según el origen o tipo de fuente de financiamiento. Incluye todas las categorías de acreedores y mecanismos de endeudamiento.
+Variable_Deuda,XEC10_Reestructurada_1989___1990,Deuda Reestructurada 1989-1990 (Plan Brady),"Deuda externa que fue reestructurada mediante el Plan Brady en 1989-1990, incluyendo bonos Brady y otros instrumentos de reestructuración de la crisis de deuda de los años ochenta."
+Variable_Deuda,XEC1010_Bonos_a_la_par_Brady,Bonos a la Par (Brady),Bonos Brady que mantuvieron el valor nominal original de la deuda reestructurada pero con tasas de interés reducidas.
+Variable_Deuda,XEC1020_Bonos_de_descuento_Brady,Bonos de Descuento (Brady),"Bonos Brady emitidos con un descuento sobre el valor nominal original de la deuda, manteniendo tasas de interés de mercado."
+Variable_Deuda,XEC1030_Bonos_de_la_Banca_Española,Bonos de la Banca Española,Instrumentos específicos de la reestructuración con acreedores españoles.
+Variable_Deuda,XEC1040_Base_de_dinero_1990___1992,Base de Dinero 1990-1992,Componente de la reestructuración relacionado con operaciones de base monetaria durante el periodo 1990-1992.
+Variable_Deuda,XEC1050_Bonos_de_reprivatización,Bonos de Reprivatización,Instrumentos emitidos en el contexto de procesos de privatización de empresas públicas.
+Variable_Deuda,XEC20_Mercado_Bancario,Deuda con Mercado Bancario,"Financiamiento obtenido de instituciones bancarias comerciales internacionales, incluyendo créditos sindicados, bilaterales y líneas de crédito."
+Variable_Deuda,XEC30_Fondo_de_estabilización,Fondo de Estabilización,Componente de deuda relacionado con mecanismos de estabilización financiera establecidos en acuerdos internacionales.
+Variable_Deuda,XEC40_Comercio_Exterior,Deuda de Comercio Exterior,"Financiamiento externo asociado a operaciones de comercio internacional, incluyendo créditos de bancos de exportación e importación (Eximbanks) y financiamiento de proveedores."
+Variable_Deuda,XEC50_Mercado_de_Capitales,Deuda de Mercado de Capitales,"Financiamiento obtenido mediante emisiones de bonos y valores en mercados internacionales de capitales. Incluye bonos soberanos, eurobonos y otros instrumentos de deuda negociables."
+Variable_Deuda,XEC60_Organismos_Financieros_Internacionales_OFIS,Deuda con Organismos Financieros Internacionales,"Financiamiento proporcionado por organismos multilaterales como el Banco Mundial (BIRF), Banco Interamericano de Desarrollo (BID), Fondo Monetario Internacional (FMI) y otros organismos internacionales."
+Variable_Deuda,XEC70_Proveedores,Deuda con Proveedores,"Financiamiento directo obtenido de proveedores de bienes y servicios en el extranjero, generalmente asociado a proyectos de infraestructura o adquisiciones de equipo."
+Variable_Deuda,XEC80_Pidiregas,Proyectos de Infraestructura Productiva de Largo Plazo (PIDIREGAS),"Financiamiento externo asociado a proyectos de infraestructura de largo plazo, principalmente en los sectores energético y de infraestructura, con esquemas de financiamiento diferido."
+Variable_Deuda,XEC90_Colocaciones_privadas,Colocaciones Privadas,Emisiones de deuda colocadas directamente con inversionistas institucionales específicos sin oferta pública en mercados de valores.
+Variable_Deuda,XECA_Por_Fuentes_de_financiamiento,Disposición Total por Fuentes de Financiamiento,Clasificación de las nuevas disposiciones de deuda según el origen o tipo de fuente de financiamiento.
+Variable_Deuda,XECB_Por_Fuentes_de_Financiamiento,Amortización Total por Fuentes de Financiamiento,Clasificación de las amortizaciones de deuda según el origen o tipo de fuente de financiamiento.
+Variable_Deuda,XECC_Por_Fuentes_de_Financiamiento,Endeudamiento Neto por Fuentes de Financiamiento,Clasificación del endeudamiento neto según el origen o tipo de fuente de financiamiento. Diferencia entre XECA y XECB.
+Variable_Deuda,XECD_Por_Fuentes_de_Financiamiento,Ajustes por Fuentes de Financiamiento,Clasificación de los ajustes al saldo de deuda según el origen o tipo de fuente de financiamiento.
+Variable_Deuda,XEE10_Deuda_Neta,Deuda Neta del Gobierno Federal,"Saldo neto de deuda externa del Gobierno Federal, calculado como deuda bruta menos activos externos."
+Variable_Deuda,XEE20_Activos,Activos Externos del Gobierno Federal,Activos financieros del Gobierno Federal denominados en moneda extranjera.
+Variable_Deuda,XEE30_Deuda_Bruta,Deuda Bruta del Gobierno Federal,Total de pasivos externos del Gobierno Federal sin deducir activos.
+Variable_Deuda,XEE40_Mercado_de_Capitales,Deuda del Gobierno Federal en Mercado de Capitales,Componente de la deuda del Gobierno Federal colocada en mercados internacionales de capitales.
+Variable_Deuda,XEE50_Organismos_Financieros_Internacionales_OFIS,Deuda del Gobierno Federal con OFIS,Componente de la deuda del Gobierno Federal con organismos financieros internacionales.
+Variable_Deuda,XEE60_Comercio_Exterior,Deuda del Gobierno Federal de Comercio Exterior,Componente de la deuda del Gobierno Federal asociada a operaciones de comercio exterior.
+Variable_Deuda,XEE70_Mercado_Bancario,Deuda del Gobierno Federal en Mercado Bancario,Componente de la deuda del Gobierno Federal con instituciones bancarias internacionales.
+Variable_Deuda,XEE80_Reestructurados,Deuda Reestructurada del Gobierno Federal,Componente de la deuda del Gobierno Federal correspondiente a obligaciones reestructuradas.
+Variable_Deuda,XEF00_Total,Deuda Total por Entidad,Clasificación completa del saldo de deuda externa según las principales entidades deudoras del sector público.
+Variable_Deuda,XEF10_Gobierno_Federal,Deuda del Gobierno Federal (por entidad),Deuda externa del Gobierno Federal en la clasificación por entidades específicas.
+Variable_Deuda,XEF20_Pemex,Deuda de PEMEX,"Deuda externa de Petróleos Mexicanos, la empresa productiva del Estado en el sector petrolero."
+Variable_Deuda,XEF30_CFE,Deuda de CFE,"Deuda externa de la Comisión Federal de Electricidad, la empresa productiva del Estado en el sector eléctrico."
+Variable_Deuda,XEF40_Nafin,Deuda de Nacional Financiera,"Deuda externa de Nacional Financiera, la institución de banca de desarrollo enfocada en el financiamiento industrial y empresarial."
+Variable_Deuda,XEF50_Bancomext,Deuda de Bancomext,"Deuda externa del Banco Nacional de Comercio Exterior, la institución de banca de desarrollo especializada en financiamiento de comercio internacional."
+Variable_Deuda,XEF60_Banobras,Deuda de Banobras,"Deuda externa del Banco Nacional de Obras y Servicios Públicos, la institución de banca de desarrollo enfocada en infraestructura y servicios públicos."
+Variable_Deuda,XEF70_Otras_entidades,Deuda de Otras Entidades,Deuda externa de otras entidades del sector público federal no clasificadas en las categorías principales anteriores.
+Variable_Deuda,XEG00_Deudor_Directo_ante_el_Extranjero,Deuda Total por Deudor Directo,Clasificación de la deuda según quien es el deudor directo frente a los acreedores extranjeros. Distingue entre deuda directa y deuda avalada o garantizada.
+Variable_Deuda,XEG10_Gobierno_Federal,Gobierno Federal como Deudor Directo,Deuda externa donde el Gobierno Federal es el deudor directo ante los acreedores extranjeros.
+Variable_Deuda,XEG20_Organismos_y_Empresas_Controladas,Organismos y Empresas Controladas como Deudores Directos,Deuda externa donde organismos y empresas bajo control presupuestario directo son los deudores directos.
+Variable_Deuda,XEG30_Entidades_Públicas_Financieras,Entidades Públicas Financieras como Deudores Directos,Deuda externa donde la banca de desarrollo y otras entidades financieras públicas son los deudores directos.
+Variable_Deuda,XEG40_Organismos_y_Empresas_no_Controladas,Organismos y Empresas no Controladas como Deudores Directos,Deuda externa donde organismos y empresas sin control presupuestario directo son los deudores directos.
+Variable_Deuda,XEG45_Usuario_de_recursos,Usuario de Recursos (Clasificación alternativa),"Clasificación que identifica al usuario final de los recursos del financiamiento externo, independientemente de quien sea el deudor legal."
+Variable_Deuda,XEG50_Organismos_y_Empresas_no_Controladas,Organismos y Empresas no Controladas (Usuario),Organismos y empresas no controladas en su calidad de usuarios finales de recursos externos.
+Variable_Deuda,XEH00_Total,Deuda Total por País Acreedor,Clasificación geográfica completa de la deuda externa según el país de residencia de los acreedores.
+Variable_Deuda,XEH10_Estados_Unidos,Deuda con Estados Unidos,"Deuda externa con acreedores residentes en Estados Unidos, incluyendo instituciones financieras, inversionistas y agencias gubernamentales estadounidenses."
+Variable_Deuda,XEH20_OFIS,Deuda con Organismos Financieros Internacionales (por país),Deuda con organismos financieros internacionales multilaterales en la clasificación geográfica.
+Variable_Deuda,XEH30_Japón,Deuda con Japón,Deuda externa con acreedores residentes en Japón.
+Variable_Deuda,XEH40_Gran_Bretaña,Deuda con Gran Bretaña,Deuda externa con acreedores residentes en el Reino Unido.
+Variable_Deuda,XEH50_Alemania,Deuda con Alemania,Deuda externa con acreedores residentes en Alemania.
+Variable_Deuda,XEH60_Francia,Deuda con Francia,Deuda externa con acreedores residentes en Francia.
+Variable_Deuda,XEH70_Suiza,Deuda con Suiza,Deuda externa con acreedores residentes en Suiza.
+Variable_Deuda,XEH80_Canadá,Deuda con Canadá,Deuda externa con acreedores residentes en Canadá.
+Variable_Deuda,XEH90_Otros,Deuda con Otros Países,Deuda externa con acreedores residentes en países no clasificados en las categorías principales anteriores.
+Variable_Deuda,XEI00_Total,Deuda Total por Moneda de Denominación,Clasificación completa de la deuda externa según la moneda en la que están denominadas las obligaciones.
+Variable_Deuda,XEI10_Dólar_Americano,Deuda Denominada en Dólar Estadounidense,"Deuda externa denominada en dólares estadounidenses, la principal moneda de endeudamiento externo de México."
+Variable_Deuda,XEI20_Canasta_de_Monedas,Deuda Denominada en Canasta de Monedas,"Deuda externa denominada en unidades de cuenta basadas en canastas de múltiples monedas, como los Derechos Especiales de Giro (DEG) del FMI."
+Variable_Deuda,XEI30_Yen_Japonés,Deuda Denominada en Yen Japonés,Deuda externa denominada en yenes japoneses.
+Variable_Deuda,XEI40_Marco_Alemán,Deuda Denominada en Marco Alemán,Deuda externa que originalmente fue denominada en marcos alemanes. Estas obligaciones fueron convertidas a euros tras la adopción de la moneda única europea.
+Variable_Deuda,XEI50_Franco_Francés,Deuda Denominada en Franco Francés,Deuda externa que originalmente fue denominada en francos franceses. Estas obligaciones fueron convertidas a euros tras la adopción de la moneda única europea.
+Variable_Deuda,XEI60_Libra_Esterlina,Deuda Denominada en Libra Esterlina,Deuda externa denominada en libras esterlinas británicas.
+Variable_Deuda,XEI70_Franco_Suizo,Deuda Denominada en Franco Suizo,Deuda externa denominada en francos suizos.
+Variable_Deuda,XEI80_Dólar_Canadiense,Deuda Denominada en Dólar Canadiense,Deuda externa denominada en dólares canadienses.
+Variable_Deuda,XEI90_Otras,Deuda Denominada en Otras Monedas,Deuda externa denominada en monedas no clasificadas en las categorías principales anteriores.

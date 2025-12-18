@@ -1,0 +1,76 @@
+{
+  "nombre_dataset": "TasaInteres_Trimestral",
+  "descripcion": "Tasas de interés de referencia trimestralizadas de México (Tasa Objetivo Banxico) y Estados Unidos (Fed Funds Rate)",
+  "fecha_actualizacion": "2025-10-06",
+  "frecuencia": "Trimestral",
+  "unidades": "Porcentaje anual",
+  "fuentes": {
+    "Mexico": {
+      "institucion": "Banco de México",
+      "url": "https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?sector=18&accion=consultarCuadroAnalitico&idCuadro=CA51&locale=es",
+      "serie": "SF61745",
+      "nombre_serie": "Tasa objetivo"
+    },
+    "USA": {
+      "institucion": "Federal Reserve Economic Data (FRED)",
+      "url": "https://fred.stlouisfed.org/series/FEDFUNDS",
+      "serie": "FEDFUNDS",
+      "nombre_serie": "Federal Funds Effective Rate"
+    }
+  },
+  "metodologia": {
+    "trimestralizacion": "Promedio trimestral de las observaciones disponibles",
+    "periodo": "Primer día del trimestre en formato MM/01/YYYY"
+  },
+  "variables": [
+    {
+      "nombre": "periodo",
+      "tipo": "string",
+      "formato": "MM/01/YYYY",
+      "descripcion": "Periodo trimestral (primer día del trimestre)",
+      "ejemplo": "01/01/2020"
+    },
+    {
+      "nombre": "TasaMXN",
+      "tipo": "float",
+      "unidad": "Porcentaje anual",
+      "descripcion": "Tasa objetivo del Banco de México (tasa de política monetaria)",
+      "fuente": "Banco de México (Banxico)",
+      "serie_banxico": "SF61745",
+      "cobertura_temporal": "2008 Q1 - 2025 Q4",
+      "frecuencia_original": "Diaria",
+      "metodo_agregacion": "Promedio trimestral",
+      "notas": "Es la tasa de política monetaria que resume la postura de Banxico y mueve al resto de tasas. Usada como variable local de tasas en MXN."
+    },
+    {
+      "nombre": "TasaUSD",
+      "tipo": "float",
+      "unidad": "Porcentaje anual",
+      "descripcion": "Tasa de fondos federales efectiva de Estados Unidos (Fed Funds Rate)",
+      "fuente": "Federal Reserve - FRED",
+      "serie_fred": "FEDFUNDS",
+      "cobertura_temporal": "1954 Q2 - 2025 Q3",
+      "frecuencia_original": "Mensual",
+      "metodo_agregacion": "Promedio trimestral",
+      "notas": "Tasa de interés internacional en USD. Se usa como tasa objetivo de la Fed para complementar con la tasa local."
+    }
+  ],
+  "estadisticas": {
+    "total_observaciones": 286,
+    "rango_temporal": "1954 Q2 - 2025 Q4",
+    "trimestres_completos": 71,
+    "observaciones_solo_mxn": 1,
+    "observaciones_solo_usd": 215
+  },
+  "uso_recomendado": {
+    "panel_trimestral": "Usar TasaMXN como variable local de tasas en MXN",
+    "alternativa_mercado": "TIIE a 28 días (si se requiere contraste con tasa de mercado)",
+    "tasa_internacional": "Usar TasaUSD (Fed Funds) para la tasa externa en USD",
+    "conversion": "Las tasas ya están en % anual, no es necesario re-anualizar"
+  },
+  "archivos_generados": {
+    "csv": "Datos_Resultado/TasaInteres_Trimestral.csv",
+    "diccionario_json": "DiccionariosDatos/TasaInteres_Diccionario.json",
+    "diccionario_csv": "DiccionariosDatos/TasaInteres_Diccionario.csv"
+  }
+}

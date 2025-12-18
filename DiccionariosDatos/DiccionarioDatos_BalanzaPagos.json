@@ -1,0 +1,197 @@
+{
+    "informacion_general": {
+        "nombre_dataset": "Balanza de Pagos - Cuenta Corriente",
+        "descripcion": "Serie trimestral de la Balanza de Pagos de México, específicamente la Cuenta Corriente (Crédito menos Débito), que mide las transacciones económicas entre residentes y no residentes del país",
+        "fuente": "Banco de México (Banxico)",
+        "fuente_url": "https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?sector=1&accion=consultarCuadroAnalitico&idCuadro=CA410&locale=es",
+        "base_metodologica": "Manual de Balanza de Pagos y Posición de Inversión Internacional, sexta edición (MBP6)",
+        "fecha_actualizacion": "03/10/2025",
+        "periodicidad": "Trimestral",
+        "periodo_disponible": "2002-Q1 a 2025-Q2 (94 trimestres)",
+        "num_observaciones": 94,
+        "archivo_origen": "BalanzaPagos.xlsx",
+        "archivo_procesado": "BalanzaPagos_Trimestral.csv",
+        "ubicacion": "Datos_Resultado/BalanzaPagos_Trimestral.csv"
+    },
+    "variables": {
+        "periodo": {
+            "nombre_completo": "Periodo Trimestral",
+            "tipo_dato": "String (fecha)",
+            "formato": "MM/01/YYYY",
+            "descripcion": "Fecha del primer día de cada trimestre",
+            "ejemplos": [
+                "01/01/2002",
+                "01/04/2002",
+                "01/07/2002",
+                "01/10/2002"
+            ],
+            "interpretacion": "Identifica el trimestre al que corresponden los datos. Primer día del trimestre: Q1=01/01, Q2=01/04, Q3=01/07, Q4=01/10",
+            "valores_nulos": 0,
+            "notas": "Formato homogéneo con otros datasets (PIB, Inflación, TipoCambio)"
+        },
+        "BalanzaPagos": {
+            "nombre_completo": "Balanza de Pagos - Cuenta Corriente",
+            "tipo_dato": "Float",
+            "unidad": "Millones de dólares estadounidenses (USD)",
+            "descripcion": "Saldo de la cuenta corriente de la balanza de pagos, calculado como Crédito menos Débito. Incluye balanza comercial (bienes), servicios, ingreso primario e ingreso secundario",
+            "componentes": [
+                "Bienes (exportaciones e importaciones de mercancías)",
+                "Servicios (transporte, viajes, seguros, telecomunicaciones, etc.)",
+                "Ingreso primario (remuneración de empleados, ingreso por inversiones)",
+                "Ingreso secundario (remesas, transferencias corrientes)"
+            ],
+            "rango_observado": {
+                "minimo": -24580.08,
+                "maximo": 11004.07,
+                "promedio": -3420.89,
+                "desviacion_estandar": 5784.32,
+                "trimestre_minimo": "2024-Q1",
+                "trimestre_maximo": "2006-Q3"
+            },
+            "interpretacion": {
+                "valor_positivo": "Superávit en cuenta corriente. El país recibe más recursos del exterior de los que envía",
+                "valor_negativo": "Déficit en cuenta corriente. El país envía más recursos al exterior de los que recibe",
+                "cerca_de_cero": "Cuenta corriente equilibrada"
+            },
+            "formula": "Cuenta Corriente = Crédito Total - Débito Total = (Bienes + Servicios + Ingreso Primario + Ingreso Secundario)_crédito - (Bienes + Servicios + Ingreso Primario + Ingreso Secundario)_débito",
+            "metodologia_calculo": "Datos reportados directamente por Banxico en formato trimestral. No requiere agregación adicional",
+            "valores_nulos": 0,
+            "tendencia_historica": {
+                "2002-2008": "Déficits moderados, promedio -$3,000 millones USD",
+                "2009": "Mejora temporal por crisis financiera global",
+                "2010-2019": "Déficits controlados, promedio -$5,000 millones USD",
+                "2020": "Superávit excepcional por COVID-19 (reducción de importaciones)",
+                "2021-2024": "Retorno a déficits estructurales, promedio -$8,000 millones USD",
+                "2025-Q1": "Déficit histórico de -$11,171 millones USD"
+            },
+            "eventos_atipicos": [
+                {
+                    "periodo": "2020-Q2",
+                    "valor": 7871.93,
+                    "causa": "COVID-19: Colapso de importaciones y mejora temporal de cuenta corriente",
+                    "tratamiento": "Mantener como outlier legítimo, no remover"
+                },
+                {
+                    "periodo": "2024-Q1",
+                    "valor": -24580.08,
+                    "causa": "Déficit histórico récord por alto consumo de importaciones",
+                    "tratamiento": "Mantener como outlier legítimo, representa cambio estructural"
+                },
+                {
+                    "periodo": "2024-Q4",
+                    "valor": 10822.16,
+                    "causa": "Superávit excepcional, posible ajuste estacional o flujo extraordinario",
+                    "tratamiento": "Verificar con fuente original, mantener si confirmado"
+                }
+            ],
+            "fuente_dato": "Banco de México, Sistema de Información Económica (SIE), Serie SE44352",
+            "frecuencia_actualizacion": "Trimestral, con aproximadamente 75 días de rezago",
+            "datos_preliminares": "Los últimos 1-2 trimestres pueden ser preliminares y sujetos a revisión"
+        }
+    },
+    "estadisticas_descriptivas": {
+        "count": 94,
+        "mean": -3420.89,
+        "std": 5784.32,
+        "min": -24580.08,
+        "percentil_25": -5734.87,
+        "median": -2451.57,
+        "percentil_75": -417.71,
+        "max": 11004.07,
+        "trimestres_superavit": 24,
+        "trimestres_deficit": 70,
+        "porcentaje_superavit": 25.5,
+        "porcentaje_deficit": 74.5
+    },
+    "interpretacion_economica": {
+        "significado": "La cuenta corriente refleja la posición externa del país y su necesidad de financiamiento externo",
+        "implicaciones_deficit": [
+            "Necesidad de financiamiento vía cuenta de capital y financiera",
+            "Puede indicar crecimiento económico con alta dependencia de importaciones",
+            "Si es persistente y elevado, puede generar vulnerabilidad externa",
+            "Requiere entrada de inversión extranjera o endeudamiento externo"
+        ],
+        "implicaciones_superavit": [
+            "El país es acreedor neto del resto del mundo",
+            "Acumulación de reservas internacionales",
+            "Puede indicar debilidad en demanda interna",
+            "Mejora en la posición de inversión internacional"
+        ],
+        "relacion_con_tipo_cambio": "Déficits persistentes pueden generar presión depreciativa sobre el peso mexicano",
+        "importancia_para_politica": "Indicador clave para política monetaria y decisiones del Banco de México"
+    },
+    "relaciones_con_otros_datasets": {
+        "PIB": {
+            "metrica": "Cuenta Corriente / PIB",
+            "descripcion": "Proporción del déficit o superávit respecto al tamaño de la economía",
+            "benchmark": "Déficit >3% del PIB se considera elevado según FMI",
+            "interpretacion": "Mide la sostenibilidad del déficit externo"
+        },
+        "TipoCambio": {
+            "relacion": "Cuenta corriente deficitaria puede generar presión sobre el tipo de cambio",
+            "mecanismo": "Mayor déficit → mayor demanda de divisas → posible depreciación del peso"
+        },
+        "Inflacion": {
+            "relacion": "Depreciación por déficit puede importar inflación vía bienes importados",
+            "canal": "Déficit → depreciación → encarecimiento de importaciones → inflación"
+        }
+    },
+    "uso_en_modelos": {
+        "analisis_de_series_tiempo": {
+            "estacionaridad": "Serie no estacionaria, aplicar primera diferencia o análisis de cambios porcentuales",
+            "estacionalidad": "Posible componente estacional, considerar ajuste estacional",
+            "tendencia": "Tendencia hacia mayores déficits en el tiempo"
+        },
+        "modelos_predictivos": {
+            "features_sugeridos": [
+                "Cuenta corriente rezagada (lags)",
+                "PIB nominal y real",
+                "Tipo de cambio",
+                "Precios del petróleo (México es exportador)",
+                "Remesas (componente de ingreso secundario)",
+                "Indicadores de comercio exterior"
+            ],
+            "consideraciones": [
+                "Incluir efectos de COVID-19 como variable dummy",
+                "Outliers de 2020 y 2024 requieren tratamiento especial",
+                "Alta volatilidad trimestral, considerar promedios móviles"
+            ]
+        },
+        "transformaciones_recomendadas": [
+            "Cuenta corriente como % del PIB (normalización)",
+            "Primera diferencia para estacionaridad",
+            "Variación interanual (YoY)",
+            "Promedios móviles 4 trimestres"
+        ]
+    },
+    "validacion_calidad": {
+        "completitud": "100% - Sin valores faltantes",
+        "consistencia_temporal": "Verificada - Serie continua sin saltos temporales",
+        "outliers_identificados": 3,
+        "outliers_tratamiento": "Mantener outliers, reflejan eventos económicos reales",
+        "coherencia_con_fuente": "Verificada contra Banxico SIE",
+        "ultima_verificacion": "06/10/2025"
+    },
+    "referencias": {
+        "fuente_principal": "Banco de México - Sistema de Información Económica (SIE)",
+        "metodologia": "Manual de Balanza de Pagos y Posición de Inversión Internacional (MBP6), FMI",
+        "documentacion_tecnica": "https://www.banxico.org.mx/SieInternet/",
+        "conceptos_clave": "https://www.banxico.org.mx/publicaciones-y-prensa/glosario.html",
+        "marco_internacional": "Sistema de Cuentas Nacionales 2008 (SCN 2008)"
+    },
+    "notas_importantes": [
+        "Los datos están en millones de dólares estadounidenses corrientes (no ajustados por inflación)",
+        "La cuenta corriente es solo una parte de la balanza de pagos completa (que incluye también cuenta de capital y financiera)",
+        "México ha tenido déficits de cuenta corriente estructurales durante la mayor parte del periodo",
+        "Los superávits son excepcionales y generalmente asociados a shocks económicos",
+        "Para análisis completo de vulnerabilidad externa, combinar con datos de reservas internacionales y deuda externa",
+        "Última observación puede ser preliminar y sujeta a revisión en actualizaciones futuras de Banxico"
+    ],
+    "metadata": {
+        "version_diccionario": "1.0",
+        "fecha_creacion": "06/10/2025",
+        "autor": "Sistema de Procesamiento de Datos Económicos",
+        "ultima_actualizacion": "06/10/2025",
+        "compatibilidad": "Compatible con datasets PIB, Inflación, TipoCambio, Balance Público, Déficit"
+    }
+}

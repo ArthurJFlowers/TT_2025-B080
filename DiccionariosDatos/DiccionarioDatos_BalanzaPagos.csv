@@ -1,0 +1,134 @@
+seccion,campo,valor
+estadisticas_descriptivas,count,94
+estadisticas_descriptivas,max,11004.07
+estadisticas_descriptivas,mean,-3420.89
+estadisticas_descriptivas,median,-2451.57
+estadisticas_descriptivas,min,-24580.08
+estadisticas_descriptivas,percentil_25,-5734.87
+estadisticas_descriptivas,percentil_75,-417.71
+estadisticas_descriptivas,porcentaje_deficit,74.5
+estadisticas_descriptivas,porcentaje_superavit,25.5
+estadisticas_descriptivas,std,5784.32
+estadisticas_descriptivas,trimestres_deficit,70
+estadisticas_descriptivas,trimestres_superavit,24
+informacion_general,archivo_origen,BalanzaPagos.xlsx
+informacion_general,archivo_procesado,BalanzaPagos_Trimestral.csv
+informacion_general,base_metodologica,"Manual de Balanza de Pagos y Posición de Inversión Internacional, sexta edición (MBP6)"
+informacion_general,descripcion,"Serie trimestral de la Balanza de Pagos de México, específicamente la Cuenta Corriente (Crédito menos Débito), que mide las transacciones económicas entre residentes y no residentes del país"
+informacion_general,fecha_actualizacion,03/10/2025
+informacion_general,fuente,Banco de México (Banxico)
+informacion_general,fuente_url,https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?sector=1&accion=consultarCuadroAnalitico&idCuadro=CA410&locale=es
+informacion_general,nombre_dataset,Balanza de Pagos - Cuenta Corriente
+informacion_general,num_observaciones,94
+informacion_general,periodicidad,Trimestral
+informacion_general,periodo_disponible,2002-Q1 a 2025-Q2 (94 trimestres)
+informacion_general,ubicacion,Datos_Resultado/BalanzaPagos_Trimestral.csv
+interpretacion_economica,importancia_para_politica,Indicador clave para política monetaria y decisiones del Banco de México
+interpretacion_economica,relacion_con_tipo_cambio,Déficits persistentes pueden generar presión depreciativa sobre el peso mexicano
+interpretacion_economica,significado,La cuenta corriente refleja la posición externa del país y su necesidad de financiamiento externo
+interpretacion_economica.implicaciones_deficit,item_1,Necesidad de financiamiento vía cuenta de capital y financiera
+interpretacion_economica.implicaciones_deficit,item_2,Puede indicar crecimiento económico con alta dependencia de importaciones
+interpretacion_economica.implicaciones_deficit,item_3,"Si es persistente y elevado, puede generar vulnerabilidad externa"
+interpretacion_economica.implicaciones_deficit,item_4,Requiere entrada de inversión extranjera o endeudamiento externo
+interpretacion_economica.implicaciones_superavit,item_1,El país es acreedor neto del resto del mundo
+interpretacion_economica.implicaciones_superavit,item_2,Acumulación de reservas internacionales
+interpretacion_economica.implicaciones_superavit,item_3,Puede indicar debilidad en demanda interna
+interpretacion_economica.implicaciones_superavit,item_4,Mejora en la posición de inversión internacional
+metadata,autor,Sistema de Procesamiento de Datos Económicos
+metadata,compatibilidad,"Compatible con datasets PIB, Inflación, TipoCambio, Balance Público, Déficit"
+metadata,fecha_creacion,06/10/2025
+metadata,ultima_actualizacion,06/10/2025
+metadata,version_diccionario,1.0
+notas_importantes,item_1,Los datos están en millones de dólares estadounidenses corrientes (no ajustados por inflación)
+notas_importantes,item_2,La cuenta corriente es solo una parte de la balanza de pagos completa (que incluye también cuenta de capital y financiera)
+notas_importantes,item_3,México ha tenido déficits de cuenta corriente estructurales durante la mayor parte del periodo
+notas_importantes,item_4,Los superávits son excepcionales y generalmente asociados a shocks económicos
+notas_importantes,item_5,"Para análisis completo de vulnerabilidad externa, combinar con datos de reservas internacionales y deuda externa"
+notas_importantes,item_6,Última observación puede ser preliminar y sujeta a revisión en actualizaciones futuras de Banxico
+referencias,conceptos_clave,https://www.banxico.org.mx/publicaciones-y-prensa/glosario.html
+referencias,documentacion_tecnica,https://www.banxico.org.mx/SieInternet/
+referencias,fuente_principal,Banco de México - Sistema de Información Económica (SIE)
+referencias,marco_internacional,Sistema de Cuentas Nacionales 2008 (SCN 2008)
+referencias,metodologia,"Manual de Balanza de Pagos y Posición de Inversión Internacional (MBP6), FMI"
+relaciones_con_otros_datasets.Inflacion,canal,Déficit → depreciación → encarecimiento de importaciones → inflación
+relaciones_con_otros_datasets.Inflacion,relacion,Depreciación por déficit puede importar inflación vía bienes importados
+relaciones_con_otros_datasets.PIB,benchmark,Déficit >3% del PIB se considera elevado según FMI
+relaciones_con_otros_datasets.PIB,descripcion,Proporción del déficit o superávit respecto al tamaño de la economía
+relaciones_con_otros_datasets.PIB,interpretacion,Mide la sostenibilidad del déficit externo
+relaciones_con_otros_datasets.PIB,metrica,Cuenta Corriente / PIB
+relaciones_con_otros_datasets.TipoCambio,mecanismo,Mayor déficit → mayor demanda de divisas → posible depreciación del peso
+relaciones_con_otros_datasets.TipoCambio,relacion,Cuenta corriente deficitaria puede generar presión sobre el tipo de cambio
+uso_en_modelos.analisis_de_series_tiempo,estacionalidad,"Posible componente estacional, considerar ajuste estacional"
+uso_en_modelos.analisis_de_series_tiempo,estacionaridad,"Serie no estacionaria, aplicar primera diferencia o análisis de cambios porcentuales"
+uso_en_modelos.analisis_de_series_tiempo,tendencia,Tendencia hacia mayores déficits en el tiempo
+uso_en_modelos.modelos_predictivos.consideraciones,item_1,Incluir efectos de COVID-19 como variable dummy
+uso_en_modelos.modelos_predictivos.consideraciones,item_2,Outliers de 2020 y 2024 requieren tratamiento especial
+uso_en_modelos.modelos_predictivos.consideraciones,item_3,"Alta volatilidad trimestral, considerar promedios móviles"
+uso_en_modelos.modelos_predictivos.features_sugeridos,item_1,Cuenta corriente rezagada (lags)
+uso_en_modelos.modelos_predictivos.features_sugeridos,item_2,PIB nominal y real
+uso_en_modelos.modelos_predictivos.features_sugeridos,item_3,Tipo de cambio
+uso_en_modelos.modelos_predictivos.features_sugeridos,item_4,Precios del petróleo (México es exportador)
+uso_en_modelos.modelos_predictivos.features_sugeridos,item_5,Remesas (componente de ingreso secundario)
+uso_en_modelos.modelos_predictivos.features_sugeridos,item_6,Indicadores de comercio exterior
+uso_en_modelos.transformaciones_recomendadas,item_1,Cuenta corriente como % del PIB (normalización)
+uso_en_modelos.transformaciones_recomendadas,item_2,Primera diferencia para estacionaridad
+uso_en_modelos.transformaciones_recomendadas,item_3,Variación interanual (YoY)
+uso_en_modelos.transformaciones_recomendadas,item_4,Promedios móviles 4 trimestres
+validacion_calidad,coherencia_con_fuente,Verificada contra Banxico SIE
+validacion_calidad,completitud,100% - Sin valores faltantes
+validacion_calidad,consistencia_temporal,Verificada - Serie continua sin saltos temporales
+validacion_calidad,outliers_identificados,3
+validacion_calidad,outliers_tratamiento,"Mantener outliers, reflejan eventos económicos reales"
+validacion_calidad,ultima_verificacion,06/10/2025
+variables.BalanzaPagos,datos_preliminares,Los últimos 1-2 trimestres pueden ser preliminares y sujetos a revisión
+variables.BalanzaPagos,descripcion,"Saldo de la cuenta corriente de la balanza de pagos, calculado como Crédito menos Débito. Incluye balanza comercial (bienes), servicios, ingreso primario e ingreso secundario"
+variables.BalanzaPagos,formula,Cuenta Corriente = Crédito Total - Débito Total = (Bienes + Servicios + Ingreso Primario + Ingreso Secundario)_crédito - (Bienes + Servicios + Ingreso Primario + Ingreso Secundario)_débito
+variables.BalanzaPagos,frecuencia_actualizacion,"Trimestral, con aproximadamente 75 días de rezago"
+variables.BalanzaPagos,fuente_dato,"Banco de México, Sistema de Información Económica (SIE), Serie SE44352"
+variables.BalanzaPagos,metodologia_calculo,Datos reportados directamente por Banxico en formato trimestral. No requiere agregación adicional
+variables.BalanzaPagos,nombre_completo,Balanza de Pagos - Cuenta Corriente
+variables.BalanzaPagos,tipo_dato,Float
+variables.BalanzaPagos,unidad,Millones de dólares estadounidenses (USD)
+variables.BalanzaPagos,valores_nulos,0
+variables.BalanzaPagos.componentes,item_1,Bienes (exportaciones e importaciones de mercancías)
+variables.BalanzaPagos.componentes,item_2,"Servicios (transporte, viajes, seguros, telecomunicaciones, etc.)"
+variables.BalanzaPagos.componentes,item_3,"Ingreso primario (remuneración de empleados, ingreso por inversiones)"
+variables.BalanzaPagos.componentes,item_4,"Ingreso secundario (remesas, transferencias corrientes)"
+variables.BalanzaPagos.eventos_atipicos.item_1,causa,COVID-19: Colapso de importaciones y mejora temporal de cuenta corriente
+variables.BalanzaPagos.eventos_atipicos.item_1,periodo,2020-Q2
+variables.BalanzaPagos.eventos_atipicos.item_1,tratamiento,"Mantener como outlier legítimo, no remover"
+variables.BalanzaPagos.eventos_atipicos.item_1,valor,7871.93
+variables.BalanzaPagos.eventos_atipicos.item_2,causa,Déficit histórico récord por alto consumo de importaciones
+variables.BalanzaPagos.eventos_atipicos.item_2,periodo,2024-Q1
+variables.BalanzaPagos.eventos_atipicos.item_2,tratamiento,"Mantener como outlier legítimo, representa cambio estructural"
+variables.BalanzaPagos.eventos_atipicos.item_2,valor,-24580.08
+variables.BalanzaPagos.eventos_atipicos.item_3,causa,"Superávit excepcional, posible ajuste estacional o flujo extraordinario"
+variables.BalanzaPagos.eventos_atipicos.item_3,periodo,2024-Q4
+variables.BalanzaPagos.eventos_atipicos.item_3,tratamiento,"Verificar con fuente original, mantener si confirmado"
+variables.BalanzaPagos.eventos_atipicos.item_3,valor,10822.16
+variables.BalanzaPagos.interpretacion,cerca_de_cero,Cuenta corriente equilibrada
+variables.BalanzaPagos.interpretacion,valor_negativo,Déficit en cuenta corriente. El país envía más recursos al exterior de los que recibe
+variables.BalanzaPagos.interpretacion,valor_positivo,Superávit en cuenta corriente. El país recibe más recursos del exterior de los que envía
+variables.BalanzaPagos.rango_observado,desviacion_estandar,5784.32
+variables.BalanzaPagos.rango_observado,maximo,11004.07
+variables.BalanzaPagos.rango_observado,minimo,-24580.08
+variables.BalanzaPagos.rango_observado,promedio,-3420.89
+variables.BalanzaPagos.rango_observado,trimestre_maximo,2006-Q3
+variables.BalanzaPagos.rango_observado,trimestre_minimo,2024-Q1
+variables.BalanzaPagos.tendencia_historica,2002-2008,"Déficits moderados, promedio -$3,000 millones USD"
+variables.BalanzaPagos.tendencia_historica,2009,Mejora temporal por crisis financiera global
+variables.BalanzaPagos.tendencia_historica,2010-2019,"Déficits controlados, promedio -$5,000 millones USD"
+variables.BalanzaPagos.tendencia_historica,2020,Superávit excepcional por COVID-19 (reducción de importaciones)
+variables.BalanzaPagos.tendencia_historica,2021-2024,"Retorno a déficits estructurales, promedio -$8,000 millones USD"
+variables.BalanzaPagos.tendencia_historica,2025-Q1,"Déficit histórico de -$11,171 millones USD"
+variables.periodo,descripcion,Fecha del primer día de cada trimestre
+variables.periodo,formato,MM/01/YYYY
+variables.periodo,interpretacion,"Identifica el trimestre al que corresponden los datos. Primer día del trimestre: Q1=01/01, Q2=01/04, Q3=01/07, Q4=01/10"
+variables.periodo,nombre_completo,Periodo Trimestral
+variables.periodo,notas,"Formato homogéneo con otros datasets (PIB, Inflación, TipoCambio)"
+variables.periodo,tipo_dato,String (fecha)
+variables.periodo,valores_nulos,0
+variables.periodo.ejemplos,item_1,01/01/2002
+variables.periodo.ejemplos,item_2,01/04/2002
+variables.periodo.ejemplos,item_3,01/07/2002
+variables.periodo.ejemplos,item_4,01/10/2002

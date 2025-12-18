@@ -1,0 +1,14 @@
+﻿check,valor,nota
+filas,94,balanza_pagos
+columnas,10,balanza_pagos
+min_periodo,2002-01-01,balanza_pagos
+max_periodo,2025-04-01,balanza_pagos
+completitud,100.0,balanza_pagos:CuentaCorriente
+completitud,100.0,balanza_pagos:Exportaciones
+completitud,100.0,balanza_pagos:IngresosTurismo
+completitud,100.0,balanza_pagos:Remesas
+completitud,100.0,balanza_pagos:Importaciones
+completitud,100.0,balanza_pagos:BalanzaBienes
+completitud,100.0,balanza_pagos:BalanzaServicios
+completitud,100.0,balanza_pagos:BalanzaIngresoPrimario
+completitud,100.0,balanza_pagos:BalanzaIngresoSecundario

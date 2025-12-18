@@ -1,0 +1,7 @@
+﻿check,valor,nota
+filas,286,tasas
+columnas,3,tasas
+min_periodo,1954-07-01,tasas
+max_periodo,2025-10-01,tasas
+completitud,25.17,tasas:TasaMXN
+completitud,99.65,tasas:TasaUSD

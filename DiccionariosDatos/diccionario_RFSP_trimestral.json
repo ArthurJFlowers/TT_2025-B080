@@ -1,0 +1,277 @@
+{
+  "informacion_general": {
+    "titulo": "Requerimientos Financieros del Sector Público - México (RFSP) - Trimestral",
+    "identificador": "mexico_RFSP_Trimestral_SHCP_Limpio",
+    "fuente": "Secretaría de Hacienda y Crédito Público (SHCP)",
+    "pais": "México",
+    "cobertura_sectorial": "Sector Público Federal (Gobierno Central, Seguridad Social, Empresas Públicas Financieras y no Financieras)",
+    "periodo_inicio": "2001-01-01",
+    "periodo_fin": "2025-07-01",
+    "total_observaciones": 99,
+    "frecuencia": "Trimestral",
+    "total_variables": 213,
+    "unidad_monetaria": "Miles de pesos mexicanos (MXN)",
+    "tipo_cambio": "Pesos corrientes (no ajustados por inflación)",
+    "tipo_informacion": "Flujos fiscales (ingresos, gastos y financiamiento)",
+    "metodologia_agregacion": "Combinación de datos trimestrales históricos (2001-2014) con datos mensuales actuales (2008-2025) agregados mediante suma de flujos",
+    "fecha_actualizacion": "2025-06-30"
+  },
+  "columnas_identificadoras": {
+    "periodo": {
+      "nombre": "Periodo (Fecha)",
+      "tipo_dato": "string (formato fecha: YYYY-MM-DD)",
+      "descripcion": "Fecha de inicio del trimestre en formato ISO 8601. Representa el primer día del primer mes de cada trimestre.",
+      "formato": "YYYY-MM-DD",
+      "ejemplo": "2001-01-01, 2001-04-01, 2001-07-01, 2001-10-01",
+      "rango": "2001-01-01 a 2025-07-01",
+      "uso_recomendado": "Índice temporal principal para análisis de series de tiempo y visualizaciones cronológicas"
+    },
+    "CICLO": {
+      "nombre": "Año",
+      "tipo_dato": "integer",
+      "descripcion": "Año al que corresponde el dato registrado",
+      "rango": "2001 a 2025",
+      "uso_recomendado": "Filtrado y agrupación por años completos"
+    },
+    "TRIMESTRE": {
+      "nombre": "Trimestre del Año",
+      "tipo_dato": "integer",
+      "descripcion": "Número del trimestre dentro del año (1-4)",
+      "valores": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "interpretacion": {
+        "1": "Enero-Marzo",
+        "2": "Abril-Junio",
+        "3": "Julio-Septiembre",
+        "4": "Octubre-Diciembre"
+      },
+      "uso_recomendado": "Análisis de estacionalidad y comparaciones trimestre a trimestre"
+    },
+    "Periodo": {
+      "nombre": "Identificador Secuencial de Trimestre",
+      "tipo_dato": "string",
+      "descripcion": "Identificador secuencial único para cada trimestre desde el inicio de la serie",
+      "formato": "Trimestre_N",
+      "ejemplo": "Trimestre_1, Trimestre_2, ..., Trimestre_99",
+      "rango": "Trimestre_1 a Trimestre_99",
+      "uso_recomendado": "Ordenamiento secuencial y conteo de trimestres en modelos de series de tiempo"
+    }
+  },
+  "estructura_variables": {
+    "nomenclatura_general": {
+      "patron": "CLAVE_NOMBRE_descriptivo",
+      "descripcion": "Cada variable combina la clave oficial de la SHCP con el nombre descriptivo del concepto fiscal",
+      "ejemplo": "RF000000SPFCS_Requerimientos_financieros_del_sector_publico_federal"
+    },
+    "patrones_claves": {
+      "RF0": "Variables consolidadas de RFSP totales y balance tradicional (16 variables)",
+      "RF1": "Variables de ingresos por sector institucional (91 variables)",
+      "RF2": "Variables de gastos por sector institucional (78 variables)",
+      "RF3": "Variables de financiamiento - incurrimiento de pasivos (24 variables)",
+      "RF4": "Variables de activos financieros - adquisición neta (8 variables)"
+    },
+    "sufijos_sectoriales": {
+      "SPFCS": "Sector Público Federal Consolidado - Sector más amplio (29 variables)",
+      "SPFC": "Sector Público Federal Consolidado (21 variables)",
+      "SPNFC": "Sector Público Federal no Financiero (21 variables)",
+      "SGCC": "Sector Gobierno Central (21 variables)",
+      "SGCP": "Gobierno Central Presupuestario (21 variables)",
+      "SSS": "Seguridad Social - IMSS, ISSSTE (21 variables)",
+      "OGC": "Otros del Sector Gobierno Central (21 variables)",
+      "EPNFC": "Empresas Públicas no Financieras - PEMEX, CFE (21 variables)",
+      "EPFC": "Empresas Públicas Financieras - Banca de desarrollo (21 variables)"
+    },
+    "componentes_principales": {
+      "I": "Ingresos totales = I1 (corrientes) + I2 (capital)",
+      "II": "Gastos totales = II1 (corrientes) + II2 (capital)",
+      "III": "Requerimientos financieros = I - II + V - IV + VI (ajustes)",
+      "IV": "Incurrimiento neto de pasivos (financiamiento obtenido)",
+      "V": "Adquisición neta de activos financieros"
+    }
+  },
+  "variables_clave": {
+    "RFSP_Total": {
+      "nombre_variable": "RF000000SPFCS_Requerimientos_financieros_del_sector_publico_federal",
+      "descripcion": "Indicador principal del déficit o superávit fiscal del sector público federal consolidado",
+      "interpretacion": "Valor negativo indica déficit (necesidad de financiamiento), positivo indica superávit fiscal",
+      "uso_modelado": "Variable dependiente principal en modelos de sostenibilidad fiscal y pronóstico del déficit",
+      "identidad_contable": "RFSP = Ingresos - Gastos + Adq.Activos - Inc.Pasivos + Ajustes"
+    },
+    "Balance_Tradicional": {
+      "nombre_variable": "RF000001SPFCS_Balance_tradicional / RF010_Balance_tradicional",
+      "descripcion": "Balance presupuestario tradicional sin ajustes metodológicos por PIDIREGAS, IPAB, etc.",
+      "interpretacion": "Medida básica del equilibrio fiscal antes de incorporar ajustes por operaciones cuasi-fiscales",
+      "uso_modelado": "Comparación con RFSP para medir el impacto de ajustes metodológicos en el déficit reportado",
+      "diferencia_rfsp": "RFSP incluye PIDIREGAS, IPAB, FONADIN, programas de deudores y ajustes presupuestarios"
+    },
+    "Resultado_Primario": {
+      "nombre_variable": "RF010000SPFCS_Resultado_primario_de_los_requerimientos_financieros",
+      "descripcion": "RFSP excluyendo el costo financiero de la deuda (intereses, comisiones y gastos)",
+      "interpretacion": "Mide la capacidad del sector público para cubrir gastos operativos sin considerar el servicio de deuda",
+      "uso_modelado": "Indicador de sostenibilidad fiscal estructural y disciplina presupuestaria",
+      "calculo": "Resultado Primario = RFSP - Costo Financiero de la Deuda"
+    },
+    "Ingresos_Totales": {
+      "nombre_variable": "RF100000SPFC_I_Ingresos_totales_del_sector_publico_federal_consolidado",
+      "descripcion": "Suma de ingresos corrientes (I1) e ingresos de capital (I2) del sector público consolidado",
+      "componentes": "Impuestos, contribuciones, venta de bienes/servicios, renta de la propiedad, transferencias",
+      "uso_modelado": "Variable exógena en modelos de RFSP; análisis de elasticidad ingreso-PIB"
+    },
+    "Gastos_Totales": {
+      "nombre_variable": "RF200000SPFC_II_Gastos_totales_del_sector_publico_federal_consolidado",
+      "descripcion": "Suma de gastos corrientes (II1) y gastos de capital (II2) del sector público consolidado",
+      "componentes": "Servicios personales, bienes/servicios, intereses, subsidios, transferencias, inversión física",
+      "uso_modelado": "Variable exógena en modelos de RFSP; análisis de rigidez del gasto público"
+    }
+  },
+  "conceptos_clave": {
+    "RFSP": "Requerimientos Financieros del Sector Público. Mide las necesidades de financiamiento del Gobierno Federal y entidades paraestatales, ajustado por ingresos no recurrentes.",
+    "Balance_Tradicional": "Balance presupuestario básico = Ingresos presupuestarios - Gasto neto pagado. No incluye ajustes metodológicos.",
+    "Resultado_Primario": "Balance fiscal excluyendo el costo financiero. Mide sostenibilidad estructural sin considerar servicio de deuda.",
+    "PIDIREGAS": "Proyectos de Infraestructura Productiva de Largo Plazo. Inversión realizada por particulares que luego se transfiere al sector público.",
+    "IPAB": "Instituto para la Protección al Ahorro Bancario. Organismo que asumió pasivos del rescate bancario de 1995-1998.",
+    "FONADIN": "Fondo Nacional de Infraestructura. Fideicomiso para financiar proyectos de infraestructura.",
+    "Ingresos_Corrientes": "Flujos regulares y recurrentes (impuestos, contribuciones, ventas de bienes/servicios). Componente I1.",
+    "Ingresos_Capital": "Venta de activos no financieros. Son no recurrentes. Componente I2.",
+    "Gastos_Corrientes": "Erogaciones para operación regular (sueldos, servicios, transferencias corrientes). Componente II1.",
+    "Gastos_Capital": "Inversión física en activos no financieros (infraestructura, maquinaria). Componente II2.",
+    "Financiamiento_Neto": "Incurrimiento neto de pasivos (IV). Endeudamiento interno y externo para cubrir déficit.",
+    "Sector_Gobierno_Central": "Gobierno Federal + Seguridad Social + Otros organismos de gobierno central.",
+    "Sector_Publico_No_Financiero": "Gobierno Central + Empresas públicas no financieras (PEMEX, CFE).",
+    "Sector_Publico_Consolidado": "Incluye Gobierno Central + Empresas públicas financieras y no financieras."
+  },
+  "metodologia": {
+    "fuentes_datos": "Dos fuentes principales de la SHCP: (1) Metodología Anterior 2001-2014 (trimestral), (2) Metodología Actual 2008-presente (mensual)",
+    "proceso_construccion": [
+      "1. Concatenación vertical de datasets histórico (trimestral) y actual (mensual)",
+      "2. Separación de datos por frecuencia: trimestrales ya agregados vs mensuales a agregar",
+      "3. Mapeo de meses a trimestres (Ene-Mar=T1, Abr-Jun=T2, Jul-Sep=T3, Oct-Dic=T4)",
+      "4. Agregación temporal: suma de valores mensuales para obtener flujos trimestrales",
+      "5. Combinación vertical de datos históricos procesados y mensuales agregados",
+      "6. Transformación a formato ancho (trimestres en filas, variables en columnas)",
+      "7. Limpieza: retención de variables con ≥50% completitud (ajustado por traslape metodológico)",
+      "8. Imputación de valores faltantes con ceros para completar la serie temporal"
+    ],
+    "agregacion_temporal": {
+      "Flujo": "Suma de los tres valores mensuales del trimestre (aplica a ingresos, gastos, financiamiento)",
+      "Saldo": "No aplica - RFSP maneja únicamente flujos fiscales"
+    },
+    "tratamiento_valores_faltantes": {
+      "criterio_exclusion": "Variables con menos de 50% de datos completos fueron excluidas (umbral ajustado por traslape 2008-2014)",
+      "imputacion": "Valores faltantes en variables retenidas fueron imputados con cero",
+      "justificacion": "Imputación con ceros es apropiada para flujos fiscales donde ausencia de registro indica ausencia de actividad"
+    },
+    "traslape_temporal": "2008-2014: Ambas metodologías coexisten. Metodología anterior tiene 16 conceptos, metodología actual tiene 197 conceptos",
+    "consideraciones_comparabilidad": [
+      "Cambio metodológico en 2008 - se recomienda análisis de quiebre estructural (prueba de Chow)",
+      "Periodo 2008-2014 tiene datos de ambas fuentes con diferentes niveles de desagregación",
+      "Variables de metodología actual (RF1XX, RF2XX, RF3XX, RF4XX) solo disponibles desde 2008",
+      "Variables de metodología anterior (RF0XX sin sufijo sectorial) disponibles 2001-2014",
+      "Reformas fiscales y energéticas modificaron estructura de ingresos públicos post-2014"
+    ]
+  },
+  "calidad_datos": {
+    "completitud": "100% después de imputación con ceros (50% mínimo original debido al traslape metodológico)",
+    "consistencia": "Alta - los datos provienen de registros oficiales de finanzas públicas de la SHCP",
+    "actualidad": "Datos hasta julio 2025 con actualización mensual",
+    "precision": "Miles de pesos - adecuada para análisis macroeconómico y fiscal",
+    "verificacion_calidad": [
+      "Verificar identidades contables: RFSP = I - II + V - IV + VI",
+      "Confirmar que sumas sectoriales coinciden con consolidados",
+      "Validar que resultado primario excluye correctamente el costo financiero",
+      "Comparar con Informes Trimestrales de Finanzas Públicas y Deuda Pública de SHCP",
+      "Revisar consistencia de series en periodo de traslape 2008-2014"
+    ],
+    "limitaciones": [
+      "Cambio metodológico en 2008 puede generar discontinuidad en series largas",
+      "Traslape 2008-2014 con diferentes niveles de desagregación entre metodologías",
+      "Datos en pesos corrientes requieren deflactación con INPC para análisis real",
+      "Completitud variable: umbral 50% aplicado (vs 80% en otros datasets fiscales)",
+      "Algunas series solo disponibles desde 2008 por introducción de nueva metodología",
+      "Imputación con ceros puede subestimar volatilidad real en periodos con datos faltantes"
+    ]
+  },
+  "uso_recomendado": {
+    "analisis_temporal": "Utilizar 'periodo' como índice temporal. Aplicar pruebas de raíz unitaria (ADF, KPSS) antes de modelar series de tiempo.",
+    "analisis_estacionalidad": "Usar 'TRIMESTRE' para detectar patrones estacionales en ingresos tributarios y gasto público. Considerar desestacionalización (X-13 ARIMA).",
+    "analisis_sostenibilidad_fiscal": "Calcular RFSP/PIB y Resultado_Primario/PIB para evaluar trayectoria de la deuda pública. Regla FMI: déficit primario <3% PIB.",
+    "analisis_estructural": "Descomponer RFSP en componente cíclico y estructural usando filtro Hodrick-Prescott o función de producción.",
+    "analisis_composicion_ingreso": "Desagregar ingresos totales en tributarios (RF111000), petroleros (extractables de transferencias PEMEX), y no tributarios.",
+    "analisis_composicion_gasto": "Clasificar gasto en corriente vs capital (RF21XXXX vs RF22XXXX), y primario vs financiero (excluir RF213000).",
+    "analisis_sectorial": "Comparar RFSP por sector institucional: SGCP vs EPNFC vs EPFC para identificar fuentes de desequilibrio.",
+    "modelos_pronostico": "ARIMA/SARIMA para variables de alta frecuencia. VAR para relaciones dinámicas entre ingresos-gastos-RFSP.",
+    "modelos_multivariados": "VAR/VECM con PIB, inflación, tipo de cambio y precio petróleo como variables exógenas en modelo de RFSP.",
+    "integracion_otras_fuentes": "Combinar con PIB trimestral (INEGI), deuda pública (SHCP), recaudación (SAT) usando 'periodo' como llave."
+  },
+  "variables_derivadas_sugeridas": {
+    "Razones_Fiscales": {
+      "RFSP_PIB": "RFSP / PIB trimestral × 100 (indicador de sostenibilidad fiscal)",
+      "Resultado_Primario_PIB": "Resultado primario / PIB × 100 (capacidad de pago sin considerar intereses)",
+      "Ingresos_PIB": "Ingresos totales / PIB × 100 (presión fiscal)",
+      "Gastos_PIB": "Gastos totales / PIB × 100 (tamaño del sector público)",
+      "Deuda_PIB": "Saldo histórico RFSP / PIB × 100 (carga de deuda acumulada)"
+    },
+    "Indicadores_Composicion": {
+      "Participacion_Ingresos_Corrientes": "Ingresos corrientes / Ingresos totales × 100",
+      "Rigidez_Gasto": "Gastos corrientes / Gastos totales × 100",
+      "Costo_Financiero_Relativo": "Intereses / Gastos totales × 100",
+      "Inversion_Publica": "Gastos de capital / Gastos totales × 100"
+    },
+    "Tasas_Crecimiento": {
+      "g_Ingresos": "Variación % trimestral o interanual de ingresos totales",
+      "g_Gastos": "Variación % trimestral o interanual de gastos totales",
+      "g_RFSP": "Cambio absoluto en RFSP (diferencia en niveles)",
+      "g_Resultado_Primario": "Variación en puntos del PIB del resultado primario"
+    },
+    "Indicadores_Ciclo_Fiscal": {
+      "Impulso_Fiscal": "Cambio en el resultado primario estructural entre trimestres",
+      "Balance_Ciclico": "RFSP observado - RFSP estructural (requiere estimación de brecha producto)",
+      "Elasticidad_Ingresos": "% cambio ingresos / % cambio PIB (sensibilidad del ingreso al ciclo)"
+    },
+    "Series_Deflactadas": {
+      "RFSP_Real": "RFSP nominal / (INPC/100) en pesos constantes",
+      "Ingresos_Reales": "Ingresos totales deflactados",
+      "Gastos_Reales": "Gastos totales deflactados"
+    }
+  },
+  "referencias": {
+    "documentacion_oficial": [
+      "Estadísticas Oportunas de Finanzas Públicas - SHCP",
+      "Informes Trimestrales sobre la Situación Económica, las Finanzas Públicas y la Deuda Pública",
+      "Cuenta de la Hacienda Pública Federal",
+      "Criterios Generales de Política Económica"
+    ],
+    "normatividad": [
+      "Ley Federal de Presupuesto y Responsabilidad Hacendaria",
+      "Ley de Ingresos de la Federación (anual)",
+      "Presupuesto de Egresos de la Federación (anual)",
+      "Ley General de Deuda Pública"
+    ],
+    "metodologia_tecnica": [
+      "Manual de Estadísticas de Finanzas Públicas 2014 - FMI",
+      "Government Finance Statistics Manual (GFSM 2014) - IMF",
+      "Diccionario de Datos RFSP Metodología Actual - SHCP",
+      "Diccionario de Datos RFSP Metodología Anterior - SHCP"
+    ],
+    "datasets_complementarios": [
+      "PIB trimestral - INEGI (Sistema de Cuentas Nacionales)",
+      "Índice Nacional de Precios al Consumidor (INPC) - INEGI",
+      "Tipo de cambio peso-dólar (FIX) - Banco de México",
+      "Saldo histórico de los RFSP (deuda pública) - SHCP",
+      "Recaudación tributaria federal - SAT",
+      "Balance Público - SHCP (ingresos y gastos detallados)",
+      "Deuda externa del sector público - SHCP"
+    ],
+    "enlaces_utiles": {
+      "portal_shcp": "https://www.finanzaspublicas.hacienda.gob.mx/",
+      "datos_abiertos": "https://datos.gob.mx/",
+      "diccionario_actual": "http://www.secciones.hacienda.gob.mx/work/models/estadisticas_oportunas/datos_abiertos_eopf/dic_datos_rfsp_actual.pdf",
+      "diccionario_historico": "http://www.secciones.hacienda.gob.mx/work/models/estadisticas_oportunas/datos_abiertos_eopf/dic_datos_rfsp_hist.pdf",
+      "licencia": "http://datos.gob.mx/libreusomx"
+    }
+  }
+}

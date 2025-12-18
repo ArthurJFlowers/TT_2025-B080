@@ -1,0 +1,12 @@
+﻿check,valor,nota
+filas,143,balance_publico
+columnas,8,balance_publico
+min_periodo,1990-01-01,balance_publico
+max_periodo,2025-07-01,balance_publico
+completitud,100.0,balance_publico:CICLO
+completitud,100.0,balance_publico:TRIMESTRE
+completitud,100.0,balance_publico:balance_mmxn
+completitud,100.0,balance_publico:ingresos_mmxn
+completitud,100.0,balance_publico:gasto_mmxn
+completitud,100.0,balance_publico:balance_derivado_mmxn
+completitud,100.0,balance_publico:gap_balance_mmxn

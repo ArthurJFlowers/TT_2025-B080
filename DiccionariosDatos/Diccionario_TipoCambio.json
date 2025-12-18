@@ -1,0 +1,130 @@
+{
+    "nombre_dataset": "Tipo de Cambio Nominal Trimestral",
+    "descripcion": "Tipo de cambio promedio trimestral del peso mexicano frente al dólar estadounidense. Serie SF329 de Banxico: Tipo de cambio para solventar obligaciones denominadas en moneda extranjera, fecha de liquidación.",
+    "fuente": "Banco de México (Banxico)",
+    "fuente_url": "https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?accion=consultarCuadro&idCuadro=CF86&locale=es&sector=6",
+    "serie_banxico": "SF329",
+    "fecha_actualizacion": "2025-10-06",
+    "periodicidad": "Trimestral",
+    "periodo_disponible": "1968-Q1 a 2025-Q3",
+    "num_observaciones": 231,
+    "metodo_agregacion": "Promedio aritmético simple del tipo de cambio diario dentro de cada trimestre",
+    "unidad": "Pesos mexicanos por dólar estadounidense (MXN/USD)",
+    "columnas": [
+        {
+            "nombre": "periodo",
+            "tipo": "datetime64",
+            "formato": "YYYY-MM-DD",
+            "descripcion": "Fecha del primer día del trimestre",
+            "ejemplo": "1968-01-01",
+            "notas": "Representa el inicio del periodo trimestral. Los trimestres inician: 01/01, 01/04, 01/07, 01/10"
+        },
+        {
+            "nombre": "tcn",
+            "tipo": "float64",
+            "unidad": "pesos por dólar (MXN/USD)",
+            "descripcion": "Tipo de cambio nominal promedio trimestral",
+            "ejemplo": 18.6478,
+            "formula": "Promedio aritmético de los tipos de cambio diarios del trimestre",
+            "decimales": 4,
+            "notas": "Valores más altos indican depreciación del peso (más pesos por dólar). Valores más bajos indican apreciación del peso.",
+            "interpretacion": "Precio promedio del dólar en pesos mexicanos durante el trimestre. Usado para solventar obligaciones en moneda extranjera."
+        }
+    ],
+    "contexto_historico": [
+        "1968-1976: Tipo de cambio fijo de 12.50 pesos por dólar (0.0125 en pesos viejos)",
+        "1976: Primera gran devaluación, el peso pasa de 12.50 a 22.57 MXN/USD",
+        "1982: Crisis de la deuda, segunda gran devaluación",
+        "1993: Creación del 'nuevo peso' (se eliminan 3 ceros). Conversión: 1 nuevo peso = 1,000 pesos viejos",
+        "1994-1995: Crisis del 'Efecto Tequila', devaluación de ~100%",
+        "1995: Transición a régimen de tipo de cambio flotante",
+        "2008-2009: Crisis financiera global, depreciación significativa",
+        "2020: Pandemia COVID-19, tipo de cambio alcanza máximo histórico (>25 MXN/USD intradía)",
+        "2025: Estabilización relativa en torno a 18-20 MXN/USD"
+    ],
+    "notas_generales": [
+        "Los valores muy bajos en 1968-1992 (ej: 0.0125) corresponden a 'pesos viejos' antes de la reconversión monetaria de 1993",
+        "Para convertir pesos viejos a nuevos pesos: dividir entre 1,000",
+        "La serie SF329 es la más completa, con datos desde 1960",
+        "Banxico publica diariamente el tipo de cambio FIX (para solventar obligaciones)",
+        "El tipo de cambio FIX se determina con base en un promedio de cotizaciones del mercado de cambios al mayoreo",
+        "Datos históricos 1960-1992 están en pesos viejos y no se han reconvertido en este dataset",
+        "Para análisis económico post-1993, considerar solo datos desde 1993 en adelante o hacer la conversión manual"
+    ],
+    "aplicaciones": [
+        "Análisis de volatilidad cambiaria",
+        "Modelos de predicción de tipo de cambio",
+        "Evaluación de paridad del poder adquisitivo (PPP)",
+        "Análisis de competitividad exportadora",
+        "Cálculo de tipo de cambio real (TCR) combinado con inflación",
+        "Modelos de equilibrio general de economía abierta",
+        "Análisis de transmisión de política monetaria",
+        "Evaluación de riesgo cambiario para empresas con deuda en dólares",
+        "Construcción de índices de condiciones financieras",
+        "Análisis de spillovers financieros internacionales"
+    ],
+    "variables_derivadas_sugeridas": [
+        "Variación porcentual trimestral: ((tcn_t - tcn_t-1) / tcn_t-1) * 100",
+        "Variación porcentual interanual: ((tcn_t - tcn_t-4) / tcn_t-4) * 100",
+        "Tipo de cambio real (TCR): tcn * (Inflación_USA / Inflación_MEX)",
+        "Logaritmo natural: ln(tcn) para análisis de estacionariedad",
+        "Volatilidad móvil: desviación estándar rolling de variaciones porcentuales",
+        "Desvío de tendencia: tcn - HP_filter(tcn) o tcn - MA(tcn)",
+        "Índice de apreciación/depreciación base 100: (tcn / tcn_base) * 100",
+        "Carry trade return: diferencial de tasas de interés ajustado por variación cambiaria"
+    ],
+    "estadisticas_descriptivas": {
+        "tcn": {
+            "media": 7.6248,
+            "mediana": 7.8164,
+            "desviacion_estandar": 7.1851,
+            "minimo": 0.0125,
+            "maximo": 23.3579,
+            "q1": 0.0546,
+            "q3": 12.9292,
+            "periodo_minimo": "1968-Q1",
+            "periodo_maximo": "2020-Q2",
+            "observacion_minimo": "Corresponde al periodo de tipo de cambio fijo en pesos viejos",
+            "observacion_maximo": "Crisis pandemia COVID-19 en 2020"
+        }
+    },
+    "metodologia_banxico": {
+        "tipo_cambio_fix": "Tipo de cambio para solventar obligaciones denominadas en moneda extranjera",
+        "determinacion": "Promedio de cotizaciones del mercado de cambios al mayoreo para operaciones liquidables el segundo día hábil bancario siguiente",
+        "horario_determinacion": "Entre las 10:00 y las 12:00 horas, tiempo del centro de México",
+        "publicacion": "Se publica en el Diario Oficial de la Federación (DOF) un día hábil después de su determinación",
+        "uso_legal": "Utilizado para solventar obligaciones denominadas en dólares pagaderas en México"
+    },
+    "calidad_datos": {
+        "completitud": "100% - Sin datos faltantes en el periodo disponible",
+        "consistencia": "Alta - Datos oficiales de Banxico sin modificaciones",
+        "limitaciones": [
+            "Datos 1968-1992 en pesos viejos (no reconvertidos)",
+            "Cambios de régimen cambiario dificultan análisis de toda la serie",
+            "Tipo de cambio fijo 1968-1976 no refleja presiones de mercado",
+            "Periodos de control de cambios con tipo de cambio múltiple no capturados"
+        ],
+        "recomendaciones": [
+            "Para análisis estructural moderno, usar datos desde 1995 (flotación)",
+            "Para series largas, considerar hacer reconversión de pesos viejos",
+            "Incluir dummies para cambios de régimen en modelos econométricos",
+            "Complementar con datos de volatilidad implícita en opciones para análisis de riesgo"
+        ]
+    },
+    "referencias": {
+        "documentacion_banxico": "https://www.banxico.org.mx/SieInternet/",
+        "metodologia_tipo_cambio": "https://www.banxico.org.mx/mercados/d/{5E60BE6B-8F4C-8F51-5AF4-B85A2A1C7A2E}.pdf",
+        "series_relacionadas": [
+            "SF17908: Tipo de cambio FIX determinación",
+            "SF18561: Tipo de cambio FIX publicación DOF",
+            "SF17886: Tipo de cambio interbancario apertura-compra",
+            "SF60653: Tipo de cambio cierre (promedio diario)"
+        ],
+        "datasets_complementarios": [
+            "Inflacion_Trimestral.csv",
+            "PIB_Trimestral.csv",
+            "Tasas_Interes_Banxico.csv",
+            "Reservas_Internacionales.csv"
+        ]
+    }
+}

@@ -1,0 +1,7 @@
+﻿check,valor,nota
+filas,102,pib
+columnas,5,pib
+min_periodo,2000-01-01,pib
+max_periodo,2025-04-01,pib
+completitud,100.0,pib:PIB_nom_trimestral
+completitud,100.0,pib:PIB_real_trimestral

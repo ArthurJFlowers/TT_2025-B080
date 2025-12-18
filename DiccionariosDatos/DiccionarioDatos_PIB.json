@@ -1,0 +1,128 @@
+{
+  "metadata": {
+    "archivo": "PIB_procesado.csv",
+    "fuente": "Instituto Nacional de Estadística y Geografía (INEGI)",
+    "sistema": "Sistema de Cuentas Nacionales de México",
+    "url": "https://www.inegi.org.mx/temas/pib/#tabulados",
+    "año_base": 2018,
+    "periodo": "2000-Q1 a 2024-Q4",
+    "frecuencia": "Trimestral",
+    "total_registros": 100,
+    "archivos_origen": [
+      "PIBT_3.xlsx",
+      "PIBT_2.xlsx (o PIBT_r_2.xlsx)"
+    ],
+    "metodologia": "SCN 2008 (System of National Accounts 2008)",
+    "nota_importante": "PIBT_2.xlsx y PIBT_r_2.xlsx contienen valores idénticos (verificado)",
+    "relaciones": {
+      "AnaliticaDeuda": "Ratios Deuda/PIB usando PIB_nom_trimestral",
+      "BalancePublico": "Ratios Balance/PIB usando PIB_nom_trimestral",
+      "Deficit": "Ratios Déficit/PIB usando PIB_nom_trimestral"
+    },
+    "fecha_creacion": "2025-01",
+    "version": "1.0"
+  },
+  "variables": {
+    "periodo": {
+      "nombre_completo": "Periodo Trimestral",
+      "tipo_dato": "datetime64[ns]",
+      "formato": "YYYY-MM-DD",
+      "descripcion": "Fecha del primer día del trimestre (formato datetime)",
+      "ejemplos": [
+        "2000-01-01",
+        "2000-04-01",
+        "2000-07-01",
+        "2000-10-01"
+      ],
+      "notas": "Representa el inicio de cada trimestre. Q1: Enero, Q2: Abril, Q3: Julio, Q4: Octubre",
+      "uso_modelo": "Índice temporal para alineación con otros datasets"
+    },
+    "year": {
+      "nombre_completo": "Año",
+      "tipo_dato": "int64",
+      "rango": "[2000, 2024]",
+      "descripcion": "Año calendario del periodo",
+      "ejemplos": [
+        2000,
+        2010,
+        2020,
+        2024
+      ],
+      "notas": "Extraído del campo periodo. Útil para agregaciones anuales",
+      "uso_modelo": "Filtros temporales y agregaciones anuales"
+    },
+    "quarter": {
+      "nombre_completo": "Trimestre",
+      "tipo_dato": "int64",
+      "rango": "[1, 4]",
+      "descripcion": "Número del trimestre dentro del año (1=Q1, 2=Q2, 3=Q3, 4=Q4)",
+      "ejemplos": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "notas": "Extraído del campo periodo. Útil para detectar estacionalidad trimestral",
+      "uso_modelo": "Análisis de estacionalidad y patrones trimestrales"
+    },
+    "PIB_nom_trimestral": {
+      "nombre_completo": "PIB Nominal Trimestral",
+      "tipo_dato": "float64",
+      "unidad": "Millones de pesos mexicanos (MXN) a precios corrientes",
+      "metodologia": "PIBT_3 / 4",
+      "descripcion": "Producto Interno Bruto nominal trimestral a precios corrientes",
+      "rango": "[1680141, 6962480]",
+      "promedio": 3887375,
+      "interpretacion": "Valor total de bienes y servicios producidos en México durante un trimestre. Denominador en ratio Deuda/PIB",
+      "formula": "PIB_nom_trimestral = PIB_nom_anualizado / 4",
+      "fuente": "PIBT_3.xlsx (INEGI), fila 7",
+      "notas": "Serie original anualizada dividida entre 4. Para uso en ratios con deuda externa e interna",
+      "uso_modelo": "Denominador en ratios de deuda/PIB, normalización de variables fiscales"
+    },
+    "PIB_real_trimestral": {
+      "nombre_completo": "PIB Real Trimestral",
+      "tipo_dato": "float64",
+      "unidad": "Millones de pesos mexicanos (MXN) a precios constantes de 2018",
+      "metodologia": "PIBT_2 / 4",
+      "descripcion": "Producto Interno Bruto real trimestral a precios constantes de 2018",
+      "rango": "[4269784, 6151324]",
+      "promedio": 5208017,
+      "interpretacion": "Valor ajustado por inflación. Refleja cambios reales en volumen de producción. Base para calcular tasas de crecimiento",
+      "formula": "PIB_real_trimestral = PIB_real_anualizado / 4",
+      "fuente": "PIBT_2.xlsx o PIBT_r_2.xlsx (INEGI), fila 7",
+      "notas": "PIBT_2.xlsx y PIBT_r_2.xlsx contienen valores idénticos. Base para cálculo de PIB_qoq y PIB_yoy",
+      "uso_modelo": "Captura de dinámica cíclica, cálculo de crecimiento real, variable explicativa"
+    },
+    "PIB_qoq": {
+      "nombre_completo": "Variación Trimestral del PIB (Quarter-over-Quarter)",
+      "tipo_dato": "float64",
+      "unidad": "Porcentaje (%)",
+      "metodologia": "Variación porcentual del PIB real trimestral respecto al trimestre anterior",
+      "descripcion": "Tasa de crecimiento trimestral del PIB real",
+      "rango": "[-17.90, 14.64]",
+      "promedio": 0.42,
+      "interpretacion": "Mide cambio porcentual entre trimestres consecutivos. Captura ciclos económicos de corto plazo",
+      "formula": "PIB_qoq[t] = (PIB_real_trimestral[t] / PIB_real_trimestral[t-1] - 1) * 100",
+      "valores_nulos": "1 registro (2000-Q1, no hay trimestre anterior)",
+      "eventos_atipicos": "2020-Q2: -17.90% (COVID-19), 2020-Q3: +14.64% (Reapertura post-COVID)",
+      "notas": "Calculado sobre PIB_real_trimestral. Útil para detectar puntos de inflexión en ciclo económico",
+      "uso_modelo": "Captura momentum económico de corto plazo, predictor de cambios en política fiscal"
+    },
+    "PIB_yoy": {
+      "nombre_completo": "Variación Anual del PIB (Year-over-Year)",
+      "tipo_dato": "float64",
+      "unidad": "Porcentaje (%)",
+      "metodologia": "Variación porcentual del PIB real trimestral respecto al mismo trimestre del año anterior",
+      "descripcion": "Tasa de crecimiento anual del PIB real",
+      "rango": "[-20.29, 22.70]",
+      "promedio": 1.41,
+      "interpretacion": "Mide cambio porcentual respecto al mismo trimestre del año anterior. Elimina efectos estacionales",
+      "formula": "PIB_yoy[t] = (PIB_real_trimestral[t] / PIB_real_trimestral[t-4] - 1) * 100",
+      "valores_nulos": "4 registros (2000-Q1 a 2000-Q4, no hay año anterior)",
+      "eventos_atipicos": "2020-Q2: -20.29% (COVID-19), 2021-Q2: +22.70% (Efecto base bajo)",
+      "benchmark": "Saludable: 2-4%, Estancamiento: -1 a 1%, Recesión: <-1%",
+      "notas": "Métrica estándar para comparaciones internacionales. Menos volátil que PIB_qoq",
+      "uso_modelo": "Indicador de ciclo económico, variable explicativa para predicción de deuda y balance fiscal"
+    }
+  }
+}

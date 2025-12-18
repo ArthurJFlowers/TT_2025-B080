@@ -1,0 +1,343 @@
+{
+  "informacion_general": {
+    "titulo": "Balance Público de México - Ingresos, Gastos y Financiamiento (Trimestral)",
+    "identificador": "mexico_balance_publico_Trimestral_SHCP_Limpio",
+    "fuente": "Secretaría de Hacienda y Crédito Público (SHCP)",
+    "pais": "México",
+    "cobertura_sectorial": "Sector Público Federal (Gobierno Federal, Organismos y Empresas Paraestatales)",
+    "periodo_inicio": "2000-01-01",
+    "periodo_fin": "2025-07-01",
+    "total_observaciones": 103,
+    "frecuencia": "Trimestral",
+    "total_variables": 2189,
+    "unidad_monetaria": "Miles de pesos mexicanos (MXN)",
+    "tipo_cambio": "Pesos corrientes (no ajustados por inflación)",
+    "tipo_informacion": "Flujos (ingresos, gastos, financiamiento) y Saldos (disponibilidades)",
+    "metodologia_agregacion": "Suma de valores mensuales para flujos; último mes del trimestre para saldos",
+    "fecha_actualizacion": "2025-06-30"
+  },
+  "columnas_identificadoras": {
+    "periodo": {
+      "nombre": "Periodo (Fecha)",
+      "tipo_dato": "string (formato fecha: YYYY-MM-DD)",
+      "descripcion": "Fecha de inicio del trimestre en formato ISO 8601. Representa el primer día del primer mes de cada trimestre.",
+      "formato": "YYYY-MM-DD",
+      "ejemplo": "2000-01-01, 2000-04-01, 2000-07-01, 2000-10-01",
+      "rango": "2000-01-01 a 2025-07-01",
+      "uso_recomendado": "Índice temporal principal para análisis de series de tiempo y visualizaciones cronológicas"
+    },
+    "CICLO": {
+      "nombre": "Año",
+      "tipo_dato": "integer",
+      "descripcion": "Año al que corresponde el dato registrado",
+      "rango": "2000 a 2025",
+      "uso_recomendado": "Filtrado y agrupación por años completos"
+    },
+    "TRIMESTRE": {
+      "nombre": "Trimestre del Año",
+      "tipo_dato": "integer",
+      "descripcion": "Número del trimestre dentro del año (1-4)",
+      "valores": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "interpretacion": {
+        "1": "Enero-Marzo",
+        "2": "Abril-Junio",
+        "3": "Julio-Septiembre",
+        "4": "Octubre-Diciembre"
+      },
+      "uso_recomendado": "Análisis de estacionalidad y comparaciones trimestre a trimestre"
+    },
+    "Periodo": {
+      "nombre": "Identificador Secuencial de Trimestre",
+      "tipo_dato": "string",
+      "descripcion": "Identificador secuencial único para cada trimestre desde el inicio de la serie",
+      "formato": "Trimestre_N",
+      "ejemplo": "Trimestre_1, Trimestre_2, ..., Trimestre_103",
+      "rango": "Trimestre_1 a Trimestre_103",
+      "uso_recomendado": "Ordenamiento secuencial y conteo de trimestres en modelos de series de tiempo"
+    }
+  },
+  "familias_variables": {
+    "FF_Financiamiento": {
+      "prefijo": "FF",
+      "descripcion": "Variables relacionadas con el financiamiento del balance público",
+      "total_variables": 16,
+      "tipo_informacion": "Flujo",
+      "metodologia_agregacion": "Suma de valores mensuales para obtener el flujo trimestral total",
+      "interpretacion": "Representa las fuentes de financiamiento del sector público, desagregadas por origen (interno/externo) y tipo de institución financiera"
+    },
+    "IF_Intermediacion_Financiera": {
+      "prefijo": "IF",
+      "descripcion": "Variables de intermediación financiera de entidades financieras del sector público",
+      "total_variables": 522,
+      "tipo_informacion": "Flujo y Saldo",
+      "entidades_incluidas": [
+        "Bancos de desarrollo",
+        "Fondos y fideicomisos"
+      ],
+      "metodologia_agregacion": "Suma para flujos (ingresos, egresos, financiamiento); último valor del trimestre para saldos (disponibilidades)",
+      "interpretacion": "Balance de operación, intermediación financiera y endeudamiento neto de instituciones financieras públicas"
+    },
+    "XA_Balance_Sector_Publico": {
+      "prefijo": "XAA, XAB, XAC, XAD",
+      "descripcion": "Balance público consolidado del sector público mexicano",
+      "total_variables": 244,
+      "componentes": {
+        "XAA": "Balances presupuestarios y primarios",
+        "XAB": "Ingresos del sector público (tributarios, no tributarios, petroleros)",
+        "XAC": "Gasto neto pagado del sector público (programable y no programable)",
+        "XAD": "Financiamiento del sector público"
+      },
+      "tipo_informacion": "Flujo y Balance",
+      "metodologia_agregacion": "Suma para ingresos y gastos; balance como diferencia entre ingresos y gastos",
+      "interpretacion": "Indicadores fiscales consolidados que muestran la situación financiera global del sector público"
+    },
+    "XB_Gobierno_Federal": {
+      "prefijo": "XBA, XBB, XBC",
+      "descripcion": "Balance financiero e ingresos/gastos específicos del Gobierno Federal",
+      "total_variables": 72,
+      "componentes": {
+        "XBA": "Balance financiero del Gobierno Federal",
+        "XBB": "Ingresos tributarios y no tributarios del Gobierno Federal",
+        "XBC": "Gasto total del Gobierno Federal (programable y no programable)"
+      },
+      "tipo_informacion": "Flujo y Balance",
+      "metodologia_agregacion": "Suma para flujos; balance como diferencia",
+      "interpretacion": "Situación fiscal específica del Gobierno Federal, excluyendo organismos y empresas"
+    },
+    "XC_Entidades_Control_Presupuestario_Directo": {
+      "prefijo": "XCA a XCH",
+      "descripcion": "Ingresos, gastos y financiamiento de entidades de control presupuestario directo",
+      "total_variables": 40,
+      "entidades_incluidas": [
+        "PEMEX",
+        "CFE",
+        "IMSS",
+        "ISSSTE",
+        "Otras entidades"
+      ],
+      "tipo_informacion": "Flujo, Balance y Financiamiento",
+      "metodologia_agregacion": "Suma para flujos; último valor para saldos; balance como diferencia",
+      "interpretacion": "Desempeño financiero de organismos y empresas públicas con control presupuestario directo"
+    },
+    "XD_GobFed_Seguridad_Social": {
+      "prefijo": "XDA, XDB",
+      "descripcion": "Balance consolidado de Gobierno Federal y seguridad social",
+      "total_variables": 34,
+      "componentes": {
+        "XDA": "Ingresos, gastos y balance de GobFed + Seguridad Social",
+        "XDB": "Financiamiento neto y gasto de ramos autónomos"
+      },
+      "tipo_informacion": "Flujo, Balance y Financiamiento",
+      "metodologia_agregacion": "Consolidación eliminando transferencias intra-sectoriales",
+      "interpretacion": "Visión integrada del Gobierno Federal con instituciones de seguridad social"
+    },
+    "XF_Recaudacion_Federal_Participable": {
+      "prefijo": "XFA",
+      "descripcion": "Recaudación Federal Participable por tipo de impuesto",
+      "total_variables": 44,
+      "tipo_informacion": "Flujo",
+      "metodologia_agregacion": "Suma de valores mensuales",
+      "interpretacion": "Ingresos federales que se comparten con estados y municipios según la Ley de Coordinación Fiscal"
+    },
+    "XK_Balances_Consolidados_Por_Entidad": {
+      "prefijo": "XKA a XKG",
+      "descripcion": "Balances financieros consolidados desagregados por entidad",
+      "total_variables": 308,
+      "entidades": {
+        "XKA": "Consolidado total",
+        "XKB": "Consolidado sin PEMEX",
+        "XKC": "PEMEX",
+        "XKD": "CFE",
+        "XKE": "LFC",
+        "XKF": "IMSS",
+        "XKG": "ISSSTE"
+      },
+      "tipo_informacion": "Flujo, Balance, Ingreso, Gasto, Financiamiento",
+      "metodologia_agregacion": "Suma para flujos; balance como diferencia; último valor para saldos",
+      "interpretacion": "Situación financiera detallada de las principales entidades paraestatales"
+    },
+    "XL_Entidades_Control_Presupuestario_Indirecto": {
+      "prefijo": "XLA a XM",
+      "descripcion": "Balances de entidades individuales de control presupuestario indirecto",
+      "total_variables": 616,
+      "entidades_incluidas": [
+        "Hospital General de México",
+        "CONALEP",
+        "DICONSA",
+        "PMI",
+        "IMP",
+        "CAPFCE",
+        "INEA",
+        "SEPOMEX",
+        "FIRCO",
+        "ISSFAM",
+        "DIF",
+        "LICONSA",
+        "CONALITEX",
+        "CONACYT",
+        "CONAFE",
+        "TELECOM",
+        "Pronósticos",
+        "FERRONALES",
+        "LOTENAL",
+        "CAPUFE",
+        "ASA",
+        "Consolidado indirecto",
+        "Otras entidades"
+      ],
+      "tipo_informacion": "Flujo, Balance, Ingreso, Gasto, Financiamiento",
+      "metodologia_agregacion": "Suma para flujos; balance como diferencia",
+      "interpretacion": "Desempeño financiero individual de entidades con control presupuestario indirecto"
+    },
+    "XN_Balance_Detallado_GobFed": {
+      "prefijo": "XNA, XNB, XNC",
+      "descripcion": "Balance financiero del Gobierno Federal con máximo detalle",
+      "total_variables": 243,
+      "componentes": {
+        "XNA": "Ingresos presupuestarios desagregados (petroleros, tributarios, no tributarios)",
+        "XNB": "Adeudos de ejercicios fiscales anteriores y transferencias por ramo/función",
+        "XNC": "Financiamiento neto y endeudamiento"
+      },
+      "tipo_informacion": "Flujo, Balance y Financiamiento",
+      "metodologia_agregacion": "Suma para flujos; acumulación para adeudos",
+      "interpretacion": "Visión exhaustiva de los ingresos, gastos y financiamiento del Gobierno Federal con clasificación funcional y administrativa"
+    },
+    "XO_Variables_Adicionales_Sector_Publico": {
+      "prefijo": "XOA",
+      "descripcion": "Variables adicionales y complementarias del sector público",
+      "total_variables": 336,
+      "componentes_principales": [
+        "Balances financieros por entidad",
+        "Ingresos propios desagregados",
+        "Gasto por función económica",
+        "Inversión física por sector",
+        "Costo financiero por componente",
+        "Ahorro corriente sectorial",
+        "Fondos de estabilización",
+        "Gasto por clasificación funcional"
+      ],
+      "tipo_informacion": "Flujo, Saldo, Balance, Indicadores derivados",
+      "metodologia_agregacion": "Varía según tipo de variable (suma, último valor, promedio, diferencia)",
+      "interpretacion": "Indicadores complementarios que permiten análisis funcional, sectorial y de sostenibilidad fiscal"
+    }
+  },
+  "conceptos_clave": {
+    "Balance_Presupuestario": "Diferencia entre ingresos presupuestarios y gasto neto pagado del sector público. Un balance negativo indica déficit fiscal.",
+    "Balance_Primario": "Balance presupuestario excluyendo el costo financiero de la deuda. Mide la sostenibilidad fiscal sin considerar intereses.",
+    "Balance_Público": "Balance consolidado del sector público que incluye operaciones presupuestarias y no presupuestarias.",
+    "Gasto_Programable": "Gasto destinado a cumplir y atender funciones y responsabilidades gubernamentales. Incluye gasto corriente y de capital.",
+    "Gasto_No_Programable": "Gasto que no está directamente vinculado a programas del gobierno. Incluye costo financiero, participaciones y ADEFAS.",
+    "Ingresos_Petroleros": "Ingresos del sector público provenientes de la actividad petrolera, incluyendo derechos sobre hidrocarburos e IEPS gasolinas.",
+    "Ingresos_Tributarios": "Ingresos del gobierno provenientes de impuestos (ISR, IVA, IEPS, etc.).",
+    "Financiamiento_Neto": "Incremento neto de pasivos del sector público durante un periodo. Incluye endeudamiento interno y externo.",
+    "Ahorro_Corriente": "Diferencia entre ingresos corrientes y gasto corriente. Mide la capacidad de generar recursos para inversión.",
+    "Recaudación_Federal_Participable": "Ingresos federales que se distribuyen a estados y municipios según fórmulas de la Ley de Coordinación Fiscal.",
+    "ADEFAS": "Adeudos de Ejercicios Fiscales Anteriores. Compromisos de pago de años previos.",
+    "Control_Presupuestario_Directo": "Entidades cuyos ingresos y gastos se incluyen íntegramente en el presupuesto federal.",
+    "Control_Presupuestario_Indirecto": "Entidades con autonomía presupuestaria pero que reciben transferencias del gobierno federal."
+  },
+  "metodologia": {
+    "fuentes_datos": "Dos fuentes principales de la SHCP: (1) Datos históricos 1990-2010, (2) Datos actuales 2011-presente",
+    "proceso_construccion": [
+      "1. Concatenación vertical de datasets históricos y actuales",
+      "2. Filtrado de datos a partir del año 2000",
+      "3. Mapeo de meses a trimestres",
+      "4. Agregación temporal según tipo de información (Flujo vs Saldo)",
+      "5. Transformación a formato ancho con variables en columnas",
+      "6. Limpieza: retención de variables con >=80% completitud",
+      "7. Imputación de valores faltantes con ceros para completar la serie"
+    ],
+    "agregacion_temporal": {
+      "Flujo": "Suma de los tres valores mensuales del trimestre",
+      "Saldo": "Último valor del trimestre (corresponde al último mes)"
+    },
+    "tratamiento_valores_faltantes": {
+      "criterio_exclusion": "Variables con menos de 80% de datos completos fueron excluidas del dataset final",
+      "imputacion": "Valores faltantes en variables retenidas fueron imputados con cero",
+      "justificacion": "La imputación con ceros es apropiada para variables fiscales donde la ausencia de registro generalmente indica ausencia de actividad"
+    },
+    "consideraciones_comparabilidad": [
+      "Cambios metodológicos en 2011 requieren precaución al comparar periodos pre y post 2011",
+      "Reformas fiscales y energéticas han modificado la estructura de ingresos petroleros",
+      "La creación y extinción de entidades afecta la continuidad de algunas series",
+      "Variables con prefijo IF (intermediación financiera) pueden presentar discontinuidades por reestructuraciones bancarias"
+    ]
+  },
+  "calidad_datos": {
+    "completitud": "100% después de imputación con ceros (80% mínimo original)",
+    "consistencia": "Alta - los datos provienen de registros presupuestarios oficiales de la SHCP",
+    "actualidad": "Datos hasta julio 2025 con actualización mensual",
+    "precision": "Miles de pesos - adecuada para análisis macroeconómico",
+    "verificacion_calidad": [
+      "Verificar identidades contables: Balance = Ingresos - Gastos",
+      "Confirmar que sumas por componentes coinciden con totales",
+      "Validar que balances primarios excluyen correctamente el costo financiero",
+      "Comparar con estadísticas publicadas en los Informes Trimestrales de SHCP"
+    ],
+    "limitaciones": [
+      "Cambios metodológicos entre datasets históricos y actuales",
+      "Imputación con ceros puede introducir sesgos en series con datos genuinamente faltantes",
+      "Algunas entidades tienen series cortas por creación o extinción reciente",
+      "Variables de intermediación financiera pueden tener discontinuidades por reestructuraciones"
+    ]
+  },
+  "uso_recomendado": {
+    "analisis_temporal": "Utilizar 'periodo' como índice temporal para análisis de series de tiempo. El formato fecha facilita operaciones de filtrado y visualización.",
+    "analisis_estacionalidad": "Usar 'TRIMESTRE' para detectar patrones estacionales en ingresos y gastos públicos",
+    "analisis_sostenibilidad_fiscal": "Comparar balances primarios con PIB para evaluar sostenibilidad de las finanzas públicas",
+    "analisis_dependencia_petrolera": "Relacionar ingresos petroleros (XAB21) con ingresos totales (XAB_) para medir dependencia fiscal del petróleo",
+    "analisis_composicion_gasto": "Usar familias XAC y XOA para desagregar gasto por función económica y clasificación administrativa",
+    "analisis_sectorial": "Variables XK permiten comparar desempeño financiero entre entidades paraestatales",
+    "modelos_pronostico": "Aplicar modelos ARIMA/SARIMA para proyectar variables clave como ingresos tributarios o balance presupuestario",
+    "modelos_multivariados": "Usar modelos VAR para analizar relaciones dinámicas entre ingresos, gastos y financiamiento",
+    "integracion_otras_fuentes": "Combinar con datos de PIB, inflación y tipo de cambio usando 'periodo' como llave de unión"
+  },
+  "variables_derivadas_sugeridas": {
+    "Razones_Fiscales": {
+      "Balance_PIB": "Balance presupuestario / PIB trimestral",
+      "Deuda_PIB": "Financiamiento acumulado / PIB trimestral",
+      "Ingresos_PIB": "Ingresos totales / PIB trimestral",
+      "Gasto_PIB": "Gasto total / PIB trimestral"
+    },
+    "Indicadores_Composicion": {
+      "Dependencia_Petrolera": "Ingresos petroleros / Ingresos totales",
+      "Presion_Tributaria": "Ingresos tributarios / PIB",
+      "Rigidez_Gasto": "Gasto no programable / Gasto total",
+      "Gasto_Inversion": "Gasto de capital / Gasto programable"
+    },
+    "Tasas_Crecimiento": {
+      "g_Ingresos": "Variación % trimestral o anual de ingresos",
+      "g_Gastos": "Variación % trimestral o anual de gastos",
+      "g_Balance": "Variación absoluta del balance fiscal"
+    },
+    "Diferencias_Temporales": {
+      "Impulso_Fiscal": "Cambio en el balance primario estructural",
+      "Brecha_Producto": "Gasto cíclico vs estructural (requiere descomposición)"
+    }
+  },
+  "referencias": {
+    "documentacion_oficial": [
+      "Estadísticas Oportunas de Finanzas Públicas - SHCP",
+      "Informes Trimestrales sobre la Situación Económica, las Finanzas Públicas y la Deuda Pública",
+      "Cuenta de la Hacienda Pública Federal"
+    ],
+    "normatividad": [
+      "Ley Federal de Presupuesto y Responsabilidad Hacendaria",
+      "Ley de Ingresos de la Federación",
+      "Presupuesto de Egresos de la Federación",
+      "Ley de Coordinación Fiscal"
+    ],
+    "datasets_complementarios": [
+      "PIB trimestral - INEGI",
+      "Índice Nacional de Precios al Consumidor - INEGI",
+      "Tipo de cambio peso-dólar - Banco de México",
+      "Deuda pública - SHCP",
+      "Indicadores de recaudación - SAT"
+    ]
+  }
+}
